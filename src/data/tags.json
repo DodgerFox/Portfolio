@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "ru": "Дизайн",
+            "en": "Design"
+        },
+        "color": "orange"
+    },
+    {
+        "id": 2,
+        "name": {
+            "ru": "Фронтенд",
+            "en": "Frontend"
+        },
+        "color": "green"
+    },
+    {
+        "id": 3,
+        "name": {
+            "ru": "Бэкенд",
+            "en": "Backend"
+        },
+        "color": "blue"
+    }
+]

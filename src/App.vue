@@ -4,9 +4,10 @@ import { RouterView } from 'vue-router'
 
 <template>
   <main>
-    <RouterView />
+    <transition name="fade">
+      <RouterView />
+    </transition>
   </main>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
