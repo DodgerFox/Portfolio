@@ -42,11 +42,144 @@
         ]
     },
     {
+        "id": 37,
+        "title": "Made in Gym",
+        "description": "Сайт для тренаженого зала MIG",
+        "link": "https://madeingym.com/",
+        "image": "MIG.jpg",
+        "options": {
+            "lightText": true
+        },
+        "tags": [
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "title": "Русский лен",
+        "description": "Сайт для компании «Русский Лён» — инновационное предприятие, целью которого является возрождение льняной отрасли страны.",
+        "link": "https://russianlinen.ru/",
+        "image": "rl.png",
+        "tags": [
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "title": "GazpromNeft",
+        "description": "«Кубок Газпром нефти» — крупнейшее европейское хоккейное соревнование для детей до 11 лет. Уровень организации ничем не отличается от профессиональных соревнований.",
+        "link": "http://alexey-chern-ru.1gb.ru/Works/link/GazpromNeft/index.html",
+        "image": "GZPRM.jpg",
+        "tags": [
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "title": "Сахар Кубани",
+        "description": "Сайт для Краснодарской компании Сахар Кубани",
+        "link": "http://alexey-chern-ru.1gb.ru/Works/link/SugarOfKuban/index.html",
+        "image": "sahar.jpg",
+        "options": {
+            "lightText": true
+        },
+        "tags": [
+            {
+                "id": 1,
+                "name": {
+                    "ru": "Дизайн",
+                    "en": "Design"
+                },
+                "color": "orange"
+            },
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            },
+            {
+                "id": 3,
+                "name": {
+                    "ru": "Бэкенд",
+                    "en": "Backend"
+                },
+                "color": "blue"
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "title": "Главпиво",
+        "description": "Сайт для сети магазинов Главпиво",
+        "link": "https://glav-beer.ru/",
+        "image": "Glavpivo.jpg",
+        "options": {
+            "lightText": true
+        },
+        "tags": [
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "title": "Breaking Web",
+        "description": "Сайт - портфолио для компании разработчиков Bewaking Web",
+        "link": "https://brwb.ru/",
+        "image": "bw.webp",
+        "options": {
+            "lightText": true
+        },
+        "tags": [
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            }
+        ]
+    },
+    {
         "id": 3,
         "title": "ACMG",
         "description": "Надежный помошник в мире инвестиций",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/ACMC/index.html",
         "image": "acmg.webp",
+        "options": {
+            "lightText": true
+        },
         "tags": [
             {
                 "id": 2,
@@ -72,6 +205,9 @@
         "description": "Надежный помошник в мире инвестиций",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/IMR/index.html",
         "image": "imr.webp",
+        "options": {
+            "lightText": true
+        },
         "tags": [
             {
                 "id": 2,
@@ -96,6 +232,7 @@
         "title": "Главбух",
         "description": "Бухгалтерский марафон",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/AlkoDesign/index.html",
+        "image": "Glavbuh.png",
         "tags": [
             {
                 "id": 2,
@@ -112,6 +249,7 @@
         "title": "Alpine",
         "description": "Все виды высотных работ по строительному альпинизму со своим оборудованием",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/Alpine/index.html",
+        "image": "alpine.png",
         "tags": [
             {
                 "id": 2,
@@ -133,34 +271,10 @@
     },
     {
         "id": 7,
-        "title": "Alpine",
-        "description": "Надежный помошник в мире инвестиций",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Alpine/index.html",
-        "image": "imr.webp",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 8,
         "title": "AltaiPalaceHotel",
         "description": "Сайт для элитного отеля",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/AltaiPalaceHotel/index.html",
+        "image": "altai.png",
         "tags": [
             {
                 "id": 2,
@@ -185,7 +299,7 @@
         "title": "Amber",
         "description": "Международный экономический форум янтарной отрасли",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/amber/index.html",
-        "image": "forum.webp",
+        "image": "forum.png",
         "tags": [
             {
                 "id": 2,
@@ -210,30 +324,7 @@
         "title": "APISender",
         "description": "Программный комплекс APISender для рассылок WhatsApp и SMS позволяет отправлять сообщения через собственные сим-карты и аккаунты WhatsApp.",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/APISender/index.html",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 10,
-        "title": "APISender",
-        "description": "Программный комплекс APISender для рассылок WhatsApp и SMS позволяет отправлять сообщения через собственные сим-карты и аккаунты WhatsApp.",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/APISender/index.html",
+        "image": "apisender.png",
         "tags": [
             {
                 "id": 2,
@@ -316,6 +407,7 @@
         "title": "Danke",
         "description": "Тестовое задание для Danke",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/Danke/index.html",
+        "image": "danke.png",
         "tags": [
             {
                 "id": 2,
@@ -332,6 +424,10 @@
         "title": "EcoTech",
         "description": "Сайт для диджитал компании EcoTech",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/ecotech/index.html",
+        "image": "ecotech.png",
+        "options": {
+            "lightText": true
+        },
         "tags": [
             {
                 "id": 1,
@@ -364,6 +460,10 @@
         "title": "FinancialGuide",
         "description": "Лучшие инвестиционные идеи месяца",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/FinancialGuide/index.html",
+        "image": "fg.png",
+        "options": {
+            "lightText": true
+        },
         "tags": [
             {
                 "id": 2,
@@ -388,6 +488,7 @@
         "title": "FreeSender",
         "description": "Программа FreeSender для рассылок WhatsApp и SMS позволяет отправлять сообщения с компьютера бесплатно в неограниченных количествах.",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/FreeSender/index.html",
+        "image": "freesender.png",
         "tags": [
             {
                 "id": 1,
@@ -412,23 +513,6 @@
                     "en": "Backend"
                 },
                 "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 17,
-        "title": "GazpromNeft",
-        "description": "«Кубок Газпром нефти» — крупнейшее европейское хоккейное соревнование для детей до 11 лет. Уровень организации ничем не отличается от профессиональных соревнований.",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/GazpromNeft/index.html",
-        "image": "GZPRM.jpg",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
             }
         ]
     },
@@ -454,6 +538,7 @@
         "title": "Hunter",
         "description": "Электронные манки с влагозащитой, звучанием до 8 км и гарантией 12 месяцев",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/Hunter/index.html",
+        "image": "hunter.png",
         "tags": [
             {
                 "id": 1,
@@ -475,9 +560,10 @@
     },
     {
         "id": 20,
-        "title": "IQOption верстка email рассылки",
+        "title": "IQOption",
         "description": "IQOption верстка email рассылки",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/IQOption/index.html",
+        "image": "iqoption.png",
         "tags": [
             {
                 "id": 2,
@@ -494,6 +580,7 @@
         "title": "ITsagency",
         "description": "Верстка тестового задания для itsagency",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/itsagency/index.html",
+        "image": "itagency.png",
         "tags": [
             {
                 "id": 2,
@@ -510,46 +597,7 @@
         "title": "Lebedev",
         "description": "Верстка тестового задания для слудии Лебедева",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/Lebedev/index.html",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 23,
-        "title": "Lebedev",
-        "description": "Верстка тестового задания для слудии Лебедева",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Lebedev/index.html",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 23,
-        "title": "Meduza",
-        "description": "Верстка сайта для модного магазина meduza",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Meduzцйцвй/index.html",
+        "image": "lebedev.png",
         "tags": [
             {
                 "id": 2,
@@ -678,87 +726,6 @@
         ]
     },
     {
-        "id": 29,
-        "title": "Сахар Кубани",
-        "description": "Сайт для Краснодарской компании Сахар Кубани",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/SugarOfKuban/index.html",
-        "image": "sahar.webp",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 3,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 30,
-        "title": "TrafficIsobar",
-        "description": "Верстка интернет магазина для TrafficIsobar",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/TrafficIsobar/index.html",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 31,
-        "title": "TrafficIsobar",
-        "description": "Верстка интернет магазина для TrafficIsobar",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/TrafficIsobar/index.html",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 3,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
         "id": 32,
         "title": "Veles",
         "description": "",
@@ -789,6 +756,31 @@
         "description": "Учи английский по 7 слов в минуту",
         "link": "http://alexey-chern-ru.1gb.ru/Works/link/Zamutkin/index.html",
         "image": "Zamutk.webp",
+        "tags": [
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            },
+            {
+                "id": 3,
+                "name": {
+                    "ru": "Бэкенд",
+                    "en": "Backend"
+                },
+                "color": "blue"
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "title": "PayDrivers",
+        "description": "Paydrivers - платформа для развлечений автолюбителей",
+        "link": "https://vc.ru/u/542483-pay/240894-paydrivers-platforma-dlya-razvlechenii-avtolyubitelei",
+        "image": "PD1.webp",
         "tags": [
             {
                 "id": 2,

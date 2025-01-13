@@ -2,9 +2,9 @@
   <secion class="projects">
     <div class="wrap">
       <h1>Projects</h1>
-      <Tags v-model:tags="tags" :active="[]" />
+      <Tags v-model:tags="tags" v-model:active="activeTags" />
       <div class="projects-body">
-        <Card v-for="project in projects" :key="project.id" :card="project" />
+        <Card v-for="project in filteredCards" :key="project.id" :card="project" />
       </div>
       <!-- @clicked="tagsHandler" -->
     </div>
@@ -15,6 +15,15 @@ import tags from '@/data/tags.json'
 import projects from '@/data/projects.json'
 import Tags from '@/components/blocks/Tags.vue'
 import Card from '@/components/ui/Card.vue'
+
+const activeTags = ref([])
+
+const filteredCards = computed(() => {
+  if (!activeTags.value?.length) return projects
+  return projects.filter((project) =>
+    project?.tags.find((tag) => activeTags.value.find((tagt) => tag.id === tagt.id)),
+  )
+})
 </script>
 <style lang="stylus">
 .projects
@@ -32,13 +41,16 @@ import Card from '@/components/ui/Card.vue'
     gap 40px
 
   .tags
+    transform translateX(-1px)
     .tag
-      padding 4px 8px
-      // border 1px solid green
+      padding 4px 10px
+      border 1px solid transparent
       border-radius 25px
       p
         font-size 16px
         color white
+      &.active
+        border 1px solid white
 
 h1
   font-size 90px
