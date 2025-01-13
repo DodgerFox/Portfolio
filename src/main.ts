@@ -8,7 +8,7 @@ import messages from '@intlify/unplugin-vue-i18n/messages'
 console.log(messages, 'messages')
 
 const i18n = createI18n({
-  locale: 'ru',
+  locale: 'en',
   messages,
 })
 

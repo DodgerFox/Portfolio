@@ -38,12 +38,12 @@
               <div class="welcome-stat__title">{{ projects.length }}</div>
               <div class="welcome-stat__text">{{ $t('global.projects') }}</div>
             </router-link>
-            <div class="welcome-block clickable">
-              <div class="welcome-stat__title">69</div>
+            <div class="welcome-block clickable" @click="later">
+              <div class="welcome-stat__title">31</div>
               <div class="welcome-stat__text">{{ $t('global.clients') }}</div>
             </div>
-            <div class="welcome-block clickable">
-              <div class="welcome-stat__title">75</div>
+            <div class="welcome-block clickable" @click="later">
+              <div class="welcome-stat__title">47</div>
               <div class="welcome-stat__text">{{ $t('global.technologies') }}</div>
             </div>
             <div class="welcome-block socials">
@@ -71,9 +71,17 @@ import InlineSvg from 'vue-inline-svg'
 import projects from '@/data/projects.json'
 import story from '@/data/story.json'
 import { LOCALES } from '@/types/environtment.ts'
-const { locale } = useI18n()
+const { locale, t } = useI18n()
+
+const notificationsStore = NotificationsStore()
 
 const aboutIsOpen = ref(false)
+
+function later() {
+  console.log('later')
+
+  notificationsStore.addNotification(t('notifications.later'))
+}
 </script>
 <style lang="stylus">
 .welcome
@@ -134,6 +142,7 @@ const aboutIsOpen = ref(false)
   &-profile
     height 550px
     width 35%
+    min-width 280px
     display flex
     flex-direction column
     align-items center
@@ -152,7 +161,7 @@ const aboutIsOpen = ref(false)
       align-items center
 
   &-title
-    font-size 90px
+    font-size 6vw
     color white
     font-family Roboto
     font-weight 900
@@ -257,4 +266,10 @@ const aboutIsOpen = ref(false)
       font-size 28px
       font-weight 600
       color black
+
+// @container (width < 710px) {
+//   .avatar {
+//     font-size: 18px;
+//   }
+// }
 </style>

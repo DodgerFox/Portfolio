@@ -51,13 +51,4 @@ const filteredCards = computed(() => {
         color white
       &.active
         border 1px solid white
-
-h1
-  font-size 90px
-  color white
-  font-family Roboto
-  font-weight 900
-  text-transform uppercase
-  letter-spacing 22px
-  line-height 75px
 </style>

@@ -1,6 +1,7 @@
 <template>
   <main>
     <!-- <DynamicBackground /> -->
+    <Notifications />
     <transition name="fade">
       <RouterView />
     </transition>
@@ -12,5 +13,6 @@
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import DynamicBackground from '@/components/blocks/DynamicBackground.vue'
+import Notifications from '@/components/blocks/Notifications.vue'
+// import DynamicBackground from '@/components/blocks/DynamicBackground.vue'
 </script>
