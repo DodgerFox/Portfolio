@@ -1,0 +1,17 @@
+global:
+  projects: Projects
+  clients: Clients
+  technologies: Technologies
+
+locales:
+  ru: Russian
+  en: English
+
+welcome:
+  about: About
+  general: General
+  hi: I'm Alexey Chernov
+  occupation: Designer & Full-stack
+  portfolio: Portfolio
+
+copyright: Designed by Alexey Chernov ©copyright 2025

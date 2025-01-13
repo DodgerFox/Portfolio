@@ -48,10 +48,15 @@ section
   display flex
   align-items center
   height 50px
+  cursor pointer
+  transition 0.3s all
   p
     color white
     font-size 18px
     font-weight 600
+  &:hover
+    p
+      color #dcffd0
 
 .fade-enter-active
 .fade-leave-active
@@ -60,3 +65,8 @@ section
 .fade-enter-from
 .fade-leave-to
   opacity 0
+
+.copyright
+  position absolute
+  bottom 0
+  right 0

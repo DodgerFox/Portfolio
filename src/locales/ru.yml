@@ -1,0 +1,17 @@
+global:
+  projects: Проекты
+  clients: Клиенты
+  technologies: Технологии
+
+locales:
+  ru: Русский
+  en: Английский
+
+welcome:
+  about: Обо мне
+  general: Основная
+  hi: Меня зовут Алексей Чернов
+  occupation: Я Дизайнер и Full-Stack разработчик
+  portfolio: Портфолио
+
+copyright: Разработано Алексеем Черновым ©copyright 2025

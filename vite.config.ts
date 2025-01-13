@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import path from 'node:path'
 import AutoImport from 'unplugin-auto-import/vite'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 const filesNeedToExclude = ['src/components/blocks/*']
 
@@ -15,8 +16,15 @@ const filesPathToExclude = filesNeedToExclude.map((src) => {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    // vue(),
     vueDevTools(),
+    VueMacros({
+      plugins: {
+        vue: vue({
+          include: [/\.vue$/],
+        }),
+      },
+    }),
     AutoImport({
       include: [
         /\.vue$/,
@@ -28,9 +36,9 @@ export default defineConfig({
       dts: true,
       vueTemplate: true,
     }),
-    // VueI18nPlugin({
-    //   include: [path.resolve(__dirname, './src/locales/**')],
-    // }),
+    VueI18nPlugin({
+      include: [path.resolve(__dirname, './src/locales/**')],
+    }),
   ],
   resolve: {
     alias: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="tag">
+  <div class="tag" :class="tag.color">
     <!-- <inline-svg 
             v-if="tag.icon" 
             :src="`./src/assets/icon/${tag.icon}.svg`" 
@@ -10,14 +10,11 @@
     <p v-if="tag.name">{{ tag.name[locale] }}</p>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 const { locale } = useI18n()
-defineProps({
-  tag: {
-    type: Object,
-    required: true,
-  },
-})
+defineProps<{
+  tag: any
+}>()
 </script>
 <style lang="stylus">
 .tag
