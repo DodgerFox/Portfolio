@@ -1,6 +1,7 @@
 <template>
   <secion class="welcome">
     <div class="wrap">
+      <h1 class="welcome-title mobile">{{ $t('welcome.portfolio') }}</h1>
       <div class="welcome-blocks">
         <div class="welcome-block welcome-profile">
           <div class="welcome-header">
@@ -22,7 +23,7 @@
             </div>
           </div>
           <div class="welcome-profile__avatar" v-if="!aboutIsOpen">
-            <img src="@/assets/images/avatar.png" alt="" srcset="" />
+            <img src="@/assets/images/avatar.webp" alt="" srcset="" />
           </div>
           <div class="welcome-content" v-if="!aboutIsOpen">
             <h2 class="welcome-content__title">{{ $t('welcome.hi') }}</h2>
@@ -70,7 +71,7 @@
 import InlineSvg from 'vue-inline-svg'
 import projects from '@/data/projects.json'
 import story from '@/data/story.json'
-import { LOCALES } from '@/types/environtment.ts'
+import { LOCALES } from '@/types/environment.ts'
 const { locale, t } = useI18n()
 
 const notificationsStore = NotificationsStore()
@@ -78,28 +79,34 @@ const notificationsStore = NotificationsStore()
 const aboutIsOpen = ref(false)
 
 function later() {
-  console.log('later')
-
   notificationsStore.addNotification(t('notifications.later'))
 }
 </script>
 <style lang="stylus">
 .welcome
   width 100%
-  height 100vh
+  min-height 100vh
   display flex
   align-items center
-  // background-color #171717
   position absolute
   z-index 2
+  @media screen and (max-width: 750px)
+    padding 40px 0
   .wrap
     display flex
     align-items center
+    @media screen and (max-width: 750px)
+      align-items flex-start
+      flex-direction column
 
   &-blocks
     display flex
     width 100%
     gap 40px
+    @media screen and (max-width: 1100px)
+      gap 25px
+    @media screen and (max-width: 650px)
+      flex-direction column
 
   &-block
     border-radius 30px
@@ -138,6 +145,20 @@ function later() {
           background-color #000000
         &.github
           background-color #272727
+        @media screen and (max-width: 750px)
+          height 90px
+        @media screen and (max-width: 500px)
+          height 75px
+          svg
+            width 30px
+            height 30px
+
+    @media screen and (max-width: 1100px)
+      width calc(50% - 13px)
+    @media screen and (max-width: 750px)
+      width auto
+    @media screen and (max-width: 650px)
+      width calc(50% - 13px)
 
   &-profile
     height 550px
@@ -148,8 +169,20 @@ function later() {
     align-items center
     justify-content space-between
     padding-bottom 30px
+    container-type inline-size
     img
       max-width 100%
+    @media screen and (max-width: 1100px)
+      width 40%
+    @media screen and (max-width: 850px)
+      height 500px
+    @media screen and (max-width: 750px)
+      width 70%
+      height 550px
+      min-width 360px
+    @media screen and (max-width: 650px)
+      width 100%
+      min-width 280px
 
     &__avatar
       border-radius 50%
@@ -168,6 +201,20 @@ function later() {
     text-transform uppercase
     letter-spacing 22px
     line-height 75px
+    &.mobile
+      display none
+    @media screen and (max-width: 750px)
+      display none
+      font-size 11.5vw
+      padding-bottom 20px
+      &.mobile
+        display block
+    @media screen and (max-width: 750px)
+      font-size 10vw
+    @media screen and (max-width: 450px)
+      letter-spacing 15px
+    @media screen and (max-width: 380px)
+      font-size 9vw
 
   &-header
     width 100%
@@ -255,6 +302,14 @@ function later() {
     .welcome-blocks
       flex-wrap wrap
       flex 1
+      @media screen and (max-width: 750px)
+        flex-direction column
+      @media screen and (max-width: 650px)
+        flex-direction row
+    @media screen and (max-width: 1100px)
+      width 60%
+    @media screen and (max-width: 650px)
+      width 100%
 
   &-stat
     &__title
@@ -262,14 +317,26 @@ function later() {
       font-weight 900
       color black
       // font-family Roboto
+      @media screen and (max-width: 850px)
+        font-size 58px
+      @media screen and (max-width: 650px)
+        line-height 75px
     &__text
       font-size 28px
       font-weight 600
       color black
-
-// @container (width < 710px) {
-//   .avatar {
-//     font-size: 18px;
-//   }
-// }
+      overflow hidden
+      text-overflow ellipsis
+      @media screen and (max-width: 750px)
+        font-size 24px
+      @media screen and (max-width: 500px)
+        font-size 20px
+</style>
+<style>
+@container (width < 320px) {
+  .welcome-profile__avatar {
+    width: 240px;
+    height: 240px;
+  }
+}
 </style>

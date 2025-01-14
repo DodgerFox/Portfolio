@@ -1,4 +1,4 @@
-import { LOCALES } from './Environment'
+import { LOCALES } from './environment'
 import { TextTranslate } from './helpers/TextTranslate'
 
 export interface TagDTO {

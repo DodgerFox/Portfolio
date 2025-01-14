@@ -5,7 +5,6 @@ import { createPinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
 
 import messages from '@intlify/unplugin-vue-i18n/messages'
-console.log(messages, 'messages')
 
 const i18n = createI18n({
   locale: 'en',

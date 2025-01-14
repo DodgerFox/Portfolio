@@ -6,7 +6,6 @@
       <div class="projects-body">
         <Card v-for="project in filteredCards" :key="project.id" :card="project" />
       </div>
-      <!-- @clicked="tagsHandler" -->
     </div>
   </secion>
 </template>
