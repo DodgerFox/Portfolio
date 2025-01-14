@@ -3,7 +3,7 @@
     class="card"
     :class="card?.options"
     :href="card.link"
-    :style="{ backgroundImage: `url('./src/assets/images/projects/${card.image}')` }"
+    :style="{ backgroundImage: `url('./images/projects/${card.image}')` }"
     target="_blank"
   >
     <div class="card-content">

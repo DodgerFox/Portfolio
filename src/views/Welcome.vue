@@ -10,10 +10,10 @@
             </div>
             <div class="welcome-tools">
               <div class="welcome-tool">
-                <inline-svg src="./src/assets/icons/share.svg" />
+                <inline-svg src="./icons/share.svg" />
               </div>
               <div class="welcome-tool">
-                <inline-svg src="./src/assets/icons/globe.svg" />
+                <inline-svg src="./icons/globe.svg" />
                 <ul class="droplist">
                   <li v-for="(lang, index) in LOCALES" :key="index" @click="locale = lang">
                     {{ $t('locales.' + lang) }}
@@ -49,16 +49,16 @@
             </div>
             <div class="welcome-block socials">
               <a href="https://t.me/lilborsch" target="_blank" class="socials-item telegram">
-                <inline-svg src="./src/assets/icons/socials/telegram.svg" width="45" />
+                <inline-svg src="./icons/socials/telegram.svg" width="45" />
               </a>
               <a target="_blank" href="https://wa.me/+79959971293" class="socials-item whatsapp">
-                <inline-svg src="./src/assets/icons/socials/whatsapp.svg" width="45" />
+                <inline-svg src="./icons/socials/whatsapp.svg" width="45" />
               </a>
               <a href="mailto:limmeco@gmail.com" class="socials-item gmail">
-                <inline-svg src="./src/assets/icons/socials/gmail.svg" width="45" />
+                <inline-svg src="./icons/socials/gmail.svg" width="45" />
               </a>
               <a target="_blank" href="https://github.com/DodgerFox" class="socials-item github">
-                <inline-svg src="./src/assets/icons/socials/github.svg" width="45" />
+                <inline-svg src="./icons/socials/github.svg" width="45" />
               </a>
             </div>
           </div>
