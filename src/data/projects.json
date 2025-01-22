@@ -1,6 +1,31 @@
 [
     {
         "id": 1,
+        "title": "H3K9me3",
+        "description": "Сайт для выгрузки данных по научному открытию в области ДНК",
+        "link": "https://h3k9me3.netlify.app/",
+        "image": "H3K9me3.png",
+        "tags": [
+            {
+                "id": 1,
+                "name": {
+                    "ru": "Дизайн",
+                    "en": "Design"
+                },
+                "color": "orange"
+            },
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            }
+        ]
+    },
+    {
+        "id": 1,
         "title": "Begemot-Begemot",
         "description": "Full stack app development for businesses",
         "link": "https://www.thebetterbunch.com/",
