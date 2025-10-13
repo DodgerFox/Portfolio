@@ -1,6 +1,47 @@
 [
     {
         "id": 1,
+        "title": "WildWood online",
+        "description": "Сервис для любителей экстремальных видом спорта",
+        "link": "https://wiildwood.netlify.app/",
+        "image": "wildwood.png",
+        "tags": [
+            {
+                "id": 1,
+                "name": {
+                    "ru": "Дизайн",
+                    "en": "Design"
+                },
+                "color": "orange"
+            },
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Фронтенд",
+                    "en": "Frontend"
+                },
+                "color": "green"
+            },
+            {
+                "id": 2,
+                "name": {
+                    "ru": "Бэкенд",
+                    "en": "Backend"
+                },
+                "color": "blue"
+            },
+            {
+                "id": 4,
+                "name": {
+                    "ru": "Свой проект",
+                    "en": "My project"
+                },
+                "color": "violet"
+            }
+        ]
+    },
+    {
+        "id": 1,
         "title": "H3K9me3",
         "description": "Сайт для выгрузки данных по научному открытию в области ДНК",
         "link": "https://h3k9me3.netlify.app/",

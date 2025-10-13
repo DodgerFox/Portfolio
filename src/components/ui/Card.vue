@@ -48,6 +48,7 @@ defineProps<{
   &-tags
     position relative
     display flex
+    flex-wrap wrap
     gap 10px
   &-tag
     height 30px
