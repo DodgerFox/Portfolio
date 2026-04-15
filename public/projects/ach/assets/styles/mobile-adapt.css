@@ -1,0 +1,198 @@
+html,
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.box {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  section {
+    min-width: 320px;
+  }
+
+  .box {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .header {
+    padding: 18px 0;
+  }
+
+  .header__nav-list {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px 14px;
+    padding-top: 8px;
+  }
+
+  .header__nav-item {
+    margin-right: 0;
+    letter-spacing: 0.12em;
+    font-size: 1.3rem;
+  }
+
+  .welcome__text {
+    font-size: 2.8rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .welcome__button,
+  .works__button,
+  .language__button-wrap,
+  .language__button-form {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .works {
+    padding-top: 96px;
+  }
+
+  .works__underhead {
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 18px;
+  }
+
+  .works__skills {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .works__slide {
+    width: 100%;
+  }
+
+  .slide-item__text {
+    font-size: 1.6rem;
+    line-height: 1.35;
+  }
+
+  .footer .box {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .language__first,
+  .language__last {
+    width: 100%;
+  }
+
+  .language__text {
+    font-size: 2.1rem;
+    line-height: 1.35;
+  }
+
+  .welcome__logo-circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .welcome__line {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .welcome__nav {
+    width: 100%;
+    gap: 10px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .welcome__nav-item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .works__nav-wrap {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .works__nav-item {
+    margin-right: 0;
+  }
+
+  .about .box {
+    padding-top: 110px;
+    padding-bottom: 44px;
+  }
+
+  .about h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+
+  .about h3 {
+    font-size: 1.8rem;
+  }
+
+  .about p {
+    font-size: 1.6rem;
+    line-height: 1.55;
+  }
+
+  .contact-popover {
+    top: calc(50% + 118px);
+    width: calc(100vw - 24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .header__logo img {
+    max-width: 120px;
+  }
+
+  .header__nav-item {
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+  }
+
+  .welcome__text {
+    font-size: 2.2rem;
+  }
+
+  .welcome__button-under {
+    font-size: 1.2rem;
+  }
+
+  .works__button,
+  .welcome__button,
+  .language__button-wrap,
+  .language__button-form {
+    height: 48px;
+  }
+
+  .slide-item__buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer__item {
+    font-size: 1.2rem;
+  }
+}

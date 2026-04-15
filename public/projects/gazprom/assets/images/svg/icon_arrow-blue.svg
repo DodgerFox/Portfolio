@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>95848C9B-2033-4974-ACA3-36DB05AAB0E3</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M13.8093199,4.06998793 L9.64315698,0.178090781 C9.38896897,-0.0593635937 8.97672714,-0.0593635937 8.72253913,0.178090781 C8.46829903,0.415593805 8.46829903,0.800599731 8.72253913,1.03810275 L11.7774302,3.89188499 L0.65096296,3.89188499 C0.291475175,3.89188499 0,4.16417184 0,4.49999392 C0,4.83576735 0.291475175,5.10810285 0.65096296,5.10810285 L11.7774302,5.10810285 L8.72264328,7.96188508 C8.46840319,8.19938811 8.46840319,8.58439403 8.72264328,8.82189706 C8.84971125,8.94055127 9.01635777,9 9.18295221,9 C9.34954665,9 9.51614109,8.94055127 9.64326114,8.82189706 L13.8093199,4.92999991 C14.06356,4.69249688 14.06356,4.30749096 13.8093199,4.06998793 Z" id="path-1"></path>
+    </defs>
+    <g id="btn/back" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -3.000000)">
+        <g id="Stacked-Group">
+            <g id="ui/btn-arrow/blue" transform="translate(0.000000, 3.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#13B5EA" fill-rule="evenodd" transform="translate(7.000000, 4.500000) scale(-1, 1) translate(-7.000000, -4.500000) " xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

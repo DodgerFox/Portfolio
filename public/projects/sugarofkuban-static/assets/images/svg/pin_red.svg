@@ -1,0 +1,12 @@
+<svg width="37" height="54" viewBox="0 0 37 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Pin</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-481 -1585)">
+<g id="Pin">
+<use xlink:href="#path0_fill" transform="translate(481 1585)" fill="#DE273D"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 18.4246C 0 8.24939 8.28311 0 18.5 0C 28.7169 0 37 8.24939 37 18.4246C 37 30.824 18.5 54 18.5 54C 18.5 54 0 30.8524 0 18.4246ZM 11.3052 18.4246C 11.3052 22.3834 14.527 25.5907 18.5 25.5907C 22.473 25.5907 25.6947 22.3828 25.6947 18.4246C 25.6947 14.4672 22.4737 11.2599 18.5 11.2599C 14.5263 11.2599 11.3052 14.4679 11.3052 18.4246Z"/>
+</defs>
+</svg>

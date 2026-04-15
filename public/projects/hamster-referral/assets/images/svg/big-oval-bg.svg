@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2384.7 1827.3" style="enable-background:new 0 0 2384.7 1827.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Big-oval-bg_1_);}
+	.st1{fill:url(#Small-oval-bg_1_);}
+</style>
+<title>Group 2</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="Group-2" transform="translate(-116.000000, -663.000000)">
+		
+			<linearGradient id="Big-oval-bg_1_" gradientUnits="userSpaceOnUse" x1="1057.8889" y1="1675.5378" x2="1058.3124" y2="1676.5959" gradientTransform="matrix(2281.1245 1481.3796 694.1779 -1068.9402 -3575831 225740.5625)">
+			<stop  offset="0" style="stop-color:#8F569C"/>
+			<stop  offset="1" style="stop-color:#562B63"/>
+		</linearGradient>
+		<path id="Big-oval-bg" class="st0" d="M1654.8,1042.4c629.9,409.1,985.2,980,793.5,1275.2s-857.7,202.9-1487.7-206.2
+			s-985.2-980-793.5-1275.2S1024.9,633.3,1654.8,1042.4z"/>
+		
+			<linearGradient id="Small-oval-bg_1_" gradientUnits="userSpaceOnUse" x1="1057.4226" y1="1676.2898" x2="1058.4807" y2="1675.8662" gradientTransform="matrix(2152.4666 1397.8282 569.9829 -877.6967 -3231431.75 -6350.7837)">
+			<stop  offset="0" style="stop-color:#8F569C"/>
+			<stop  offset="1" style="stop-color:#562B63"/>
+		</linearGradient>
+		<path id="Small-oval-bg" class="st1" d="M1625.3,1166.6c594.4,386,948.6,895.4,791.2,1137.8
+			c-157.4,242.4-766.8,125.9-1361.2-260.1S106.6,1148.9,264,906.6S1030.9,780.6,1625.3,1166.6z"/>
+	</g>
+</g>
+</svg>

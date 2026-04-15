@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon_close" viewBox="0 0 12 12">
+      <title>469AB5E3-200E-4B06-B79D-5C46D43407DD</title><path d="M.43 11.576c.294.295.663.424 1.05.424.39 0 .758-.148 1.053-.424l3.47-3.488 3.47 3.47c.294.294.663.424 1.05.424.388 0 .757-.148 1.053-.425.572-.572.572-1.513 0-2.085l-3.488-3.47 3.47-3.47c.57-.57.57-1.512 0-2.084-.573-.573-1.514-.573-2.086 0l-3.47 3.47-3.47-3.49C1.963-.14 1.02-.14.45.43c-.573.573-.573 1.514 0 2.086l3.47 3.488-3.49 3.47c-.57.59-.57 1.513 0 2.104z" fill-rule="nonzero" fill="#000"/>
+    </symbol>
+    <symbol id="icon_line" viewBox="0 0 159 85">
+      <title>2C413819-3E42-4EF3-9C77-4F042CC75AD5</title><defs><filter x="-7.8%" y="-200%" width="115.6%" height="500%" filterUnits="objectBoundingBox" id="a"><feGaussianBlur stdDeviation="4" in="SourceGraphic"/></filter></defs><rect filter="url(#a)" transform="rotate(24 819.752 -1322.093)" x="621.779" y="222.49" width="154" height="6" rx="3" fill="#313131" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="icon_marker" viewBox="0 0 51 69">
+      <title>F32F82CB-8AC6-452E-8C90-6AFB1CCC1DE2</title><path d="M25.16 0C11.264 0 0 11.265 0 25.16s25.16 43.07 25.16 43.07 25.16-29.176 25.16-43.07C50.32 11.263 39.056 0 25.16 0zm0 30.282c-3.59 0-6.5-2.91-6.5-6.5s2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5z" fill-rule="nonzero" fill="#1567D0"/>
+    </symbol>
+    <symbol id="icon_rectangle" viewBox="0 0 72 72">
+      <title>F430CA5C-C40C-4F84-BFD8-F5289C035DEF</title><defs><filter x="-24%" y="-24%" width="148%" height="148%" filterUnits="objectBoundingBox" id="a"><feGaussianBlur stdDeviation="4" in="SourceGraphic"/></filter></defs><rect filter="url(#a)" transform="rotate(5 -4386.564 -9290.2)" x="809.596" y="362.475" width="45" height="45" rx="14" stroke="#465F7F" stroke-width="5" fill="none" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="icon_triangle" viewBox="0 0 71 70">
+      <title>6A15DC47-8DE5-418A-B557-7361486E47CB</title><defs><filter x="-27.4%" y="-38.2%" width="154.7%" height="176.3%" filterUnits="objectBoundingBox" id="a"><feGaussianBlur stdDeviation="4" in="SourceGraphic"/></filter></defs><path filter="url(#a)" transform="rotate(124 482.005 376.08)" d="M453.32 905.58l26.5 38h-53z" stroke-width="5" stroke="#8BB0A1" fill="none" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="icon_triangle1" viewBox="0 0 88 99">
+      <title>C5C503E9-0FE0-4180-9FEC-907800F9A66C</title><path d="M25.43 49.037L60.853 25.15l-.855 48.994z" stroke-width="5" stroke="#8BB0A1" fill="none" fill-rule="evenodd"/>
+    </symbol></svg>

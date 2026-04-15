@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon_logo" viewBox="0 0 52 52">
+      <defs><style>.cls-1 { fill: #f89b3e; } .cls-2 { fill: none; stroke: #fff; stroke-width: 1px; fill-rule: evenodd; }</style></defs><circle id="Эллипс_1" data-name="Эллипс 1" class="cls-1" cx="26" cy="26" r="26"/><path id="Многоугольник_1" data-name="Многоугольник 1" class="cls-2" d="M39.444 31.51L27.114 41l-14.6-9.488-1.45-6.9 29.8-.46z"/><g id="Группа_2" data-name="Группа 2"><path id="Многоугольник_2" data-name="Многоугольник 2" class="cls-2" d="M27.058 40.71L11 24.733l4.75-11.508z"/></g><path id="Многоугольник_3" data-name="Многоугольник 3" class="cls-2" d="M35.467 13l5.542 11.26-13.78 16.283z"/>
+    </symbol>
+    <symbol id="icon_menu" viewBox="0 0 32 32">
+      <g fill="#fff"><path d="M1 7h30c.552 0 1-.448 1-1s-.448-1-1-1H1c-.552 0-1 .448-1 1s.448 1 1 1zM31 15H1c-.552 0-1 .448-1 1s.448 1 1 1h30c.552 0 1-.448 1-1s-.448-1-1-1zM31 25H1c-.552 0-1 .448-1 1s.448 1 1 1h30c.552 0 1-.448 1-1s-.448-1-1-1z"/></g>
+    </symbol>
+    <symbol id="icon_title" viewBox="0 0 346 28">
+      <defs><style>.cls-1, .cls-2, .cls-3 { font-size: 32px; text-anchor: middle; font-family: &quot;Helvetica Neue&quot;; font-weight: 700; text-transform: uppercase; } .cls-1 { fill: #f58787; } .cls-2 { fill: #a9fab2; } .cls-3 { fill: #fff; }</style></defs><text id="Живи_в_движении" data-name="Живи в движении" class="cls-1" x="171.83" y="22.512">Живи в движении</text><text id="Живи_в_движении-2" data-name="Живи в движении" class="cls-2" x="173.831" y="22.512">Живи в движении</text><text id="Живи_в_движении-3" data-name="Живи в движении" class="cls-3" x="176.83" y="22.512">Живи в движении</text>
+    </symbol>
+    <symbol id="icon_title_en" viewBox="0 0 253 23">
+      <defs><style>.cls-1, .cls-2, .cls-3 { font-size: 32px; text-anchor: middle; font-family: &quot;Helvetica Neue&quot;; font-weight: 700; text-transform: uppercase; } .cls-1 { fill: #f58787; } .cls-2 { fill: #a9fab2; } .cls-3 { fill: #fff; }</style></defs><text id="Live_in_motion" data-name="Live in motion" class="cls-1" x="123.83" y="22.512">Live in motion</text><text id="Live_in_motion-2" data-name="Live in motion" class="cls-2" x="125.831" y="22.512">Live in motion</text><text id="Live_in_motion-3" data-name="Live in motion" class="cls-3" x="128.83" y="22.512">Live in motion</text>
+    </symbol></svg>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="${{ index.page.lang }}$">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="imagetoolbar" content="no">
+		<meta name="msthemecompatible" content="no">
+		<meta name="cleartype" content="on">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta property="og:title" content="${{ index.og.title }}$">
+		<meta property="og:description" content="${{ index.og.description }}$">
+		<meta property="og:type" content="${{ index.og.type }}$">
+		<meta property="og:url" content="${{ index.og.url }}$">
+		<meta property="og:image" content="${{ index.og.image }}$">
+		<meta property="og:image:height" content="${{ index.og.imageHeight }}$">
+		<meta property="og:image:width" content="${{ index.og.imageWidth }}$">
+		<title>${{ index.page.title }}$</title>
+		<meta name="description" content="${{ index.page.description }}$">
+		<meta name="copyright" content="${{ index.page.copyright }}$">
+		<!-- Common CSS-->
+		<link href="../assets/styles/common.css?1488819163743" rel="stylesheet">
+		<!-- Favicon-->
+		<link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicons/apple-icon-57x57.png?1488819163743">
+		<link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicons/apple-icon-60x60.png?1488819163743">
+		<link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicons/apple-icon-72x72.png?1488819163743">
+		<link rel="apple-touch-icon" sizes="76x76" href="../assets/images/favicons/apple-icon-76x76.png?1488819163743">
+		<link rel="apple-touch-icon" sizes="114x114" href="../assets/images/favicons/apple-icon-114x114.png?1488819163743">
+		<link rel="apple-touch-icon" sizes="120x120" href="../assets/images/favicons/apple-icon-120x120.png?1488819163743">
+		<link rel="apple-touch-icon" sizes="144x144" href="../assets/images/favicons/apple-icon-144x144.png?1488819163743">
+		<link rel="apple-touch-icon" sizes="152x152" href="../assets/images/favicons/apple-icon-152x152.png?1488819163743">
+		<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicons/apple-icon-180x180.png?1488819163743">
+		<link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicons/android-icon-192x192.png?1488819163743">
+		<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicons/favicon-32x32.png?1488819163743">
+		<link rel="icon" type="image/png" sizes="96x96" href="../assets/images/favicons/favicon-96x96.png?1488819163743">
+		<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicons/favicon-16x16.png?1488819163743">
+		<link rel="manifest" href="../assets/images/favicons/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="../assets/images/favicons/ms-icon-144x144.png?1488819163743">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Critical CSS-->
+		<style>
+			.to-platform,
+			.registration {
+			    position: absolute;
+			    top: -9999px;
+			    left: -9999px;
+			}
+			
+			.is-auth .to-platform {
+			    position: static;
+			    top: inherit;
+			    left: inherit;
+			}
+			
+			.non-auth .registration {
+			    position: static;
+			    top: inherit;
+			    left: inherit;
+			    
+			}
+		</style>
+		<!-- Start Google Analytics-->
+		<!-- GTM dataLayer-->
+		<script>
+			dataLayer = [];
+		</script>
+		<!-- End GTM dataLayer-->
+		<!-- Google Analytics-->
+		<script type="text/javascript">
+			(function (i, s, o, g, r, a, m) {
+			    i['GoogleAnalyticsObject'] = r;
+			    i[r] = i[r] || function () {
+			                (i[r].q = i[r].q || []).push(arguments)
+			    }, i[r].l = 1 * new Date();
+			    a = s.createElement(o),
+			            m = s.getElementsByTagName(o)[0];
+			    a.async = 1;
+			    a.src = g;
+			    m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-44367767-1', 'auto');
+			ga('send', 'pageview');
+			ga(function (tracker) {
+			    var clientId = tracker.get('clientId');
+			    dataLayer.push({'cid': clientId});
+			    document.cookie = "_ga_cid=" + clientId + "; path=/; domain=.iqoption.com";
+			    ga('set', 'dimension2', clientId);
+			    ga('set', 'dimension3', '');  //СЮДА ПИСАТЬ НАШ USER_ID
+			});
+		</script>
+		<!-- End Google Analytics-->
+		<!-- Google Tag Manager-->
+		<noscript>
+			<iframe src="//www.googletagmanager.com/ns.html?id=GTM-WN69JL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<script>
+			(function (w, d, s, l, i) {
+			    w[l] = w[l] || [];
+			    w[l].push({
+			        'gtm.start': new Date().getTime(), event: 'gtm.js'
+			    });
+			    var f = d.getElementsByTagName(s)[0],
+			            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			    j.async = true;
+			    j.src =
+			            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+			    f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-WN69JL');
+		</script>
+		<!-- End Google Tag Manager-->
+		<!-- End Google Analytics-->
+	</head>
+
+	<body id="top">
+		<div class="wrapRetarget">
+			<div data-wow-duration="1s" data-wow-delay="0s" class="section__header wow fadeInDown">
+				<a href="./">
+					<img src="../assets/images/logo@2x.png" class="logo">
+				</a>
+				<p class="text"></p>
+			</div>
+			<section class="sectionRetarget">
+				<div class="wrap">
+					<div data-wow-duration="1s" data-wow-delay="2.7s" class="section__stats wow bounceIn">
+						<div class="item">
+							<p class="text">${{ index.retarget.YourPosition }}$</p>
+							<h2 class="number">103</h2>
+						</div>
+						<div class="item">
+							<p class="text">${{ index.retarget.YourScore }}$</p>
+							<h2 class="number">205</h2>
+						</div>
+						<div class="item">
+							<p class="text">${{ index.retarget.FTDRequired }}$</p>
+							<h2 class="number">150</h2>
+						</div>
+					</div>
+					<div class="section__content">
+						<table class="table">
+							<div class="wrapLine">
+								<div data-wow-duration="1s" data-wow-delay="0.5s" class="line wow fadeIn"></div>
+								<div data-wow-duration="1s" data-wow-delay="0.5s" class="line lineWinners wow fadeIn"></div>
+								<div class="stripesTable"></div>
+								<div class="stripesTable"></div>
+								<div class="stripesTable"></div>
+								<div class="stripesTable"></div>
+								<div class="stripesTable"></div>
+							</div>
+							<tr data-wow-duration="1s" data-wow-delay="0.5s" class="wow fadeIn">
+								<div class="line"></div>
+								<td>${{ index.retarget.Number }}$</td>
+								<td>${{ index.retarget.Name }}$</td>
+								<td>${{ index.retarget.Country }}$</td>
+								<td>${{ index.retarget.FTD }}$</td>
+								<td>${{ index.retarget.Prize }}$</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="1.5s" class="wow fadeIn">
+								<td>1</td>
+								<td>Piter M.</td>
+								<td>UK</td>
+								<td>589</td>
+								<td class="yellow">VIP tickets <span>x 2</span>
+								</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="1.6s" class="wow fadeIn">
+								<td>2</td>
+								<td>Alex G.</td>
+								<td>Germany</td>
+								<td>589</td>
+								<td>Tickets x 2</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="1.7s" class="wow fadeIn">
+								<td>3</td>
+								<td>Pablo S.</td>
+								<td>Portugal</td>
+								<td>589</td>
+								<td>Sony PlayStation 4</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="1.8s" class="wow fadeIn">
+								<td>4</td>
+								<td>George B.</td>
+								<td>Serbia</td>
+								<td>589</td>
+								<td>$780</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="1.9s" class="wow fadeIn">
+								<td>5</td>
+								<td>Anton K.</td>
+								<td>Russia</td>
+								<td>589</td>
+								<td>$630</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="2s" class="wow fadeIn">
+								<td>6</td>
+								<td>Ivan B.</td>
+								<td>Russia</td>
+								<td>589</td>
+								<td>$450</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="2.1s" class="wow fadeIn">
+								<td>7</td>
+								<td>Samantha B.</td>
+								<td>UK</td>
+								<td>589</td>
+								<td>$330</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="2.2s" class="wow fadeIn">
+								<td>8</td>
+								<td>Pedro L.</td>
+								<td>Brazil</td>
+								<td>589</td>
+								<td>$300</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="2.3s" class="wow fadeIn">
+								<td>9</td>
+								<td>Joe S.</td>
+								<td>Romania</td>
+								<td>589</td>
+								<td>$270</td>
+							</tr>
+							<tr data-wow-duration="1s" data-wow-delay="2.4s" class="wow fadeIn">
+								<td>10</td>
+								<td>Jonathan W.</td>
+								<td>Norway</td>
+								<td>589</td>
+								<td>$240</td>
+							</tr>
+						</table>
+					</div>
+					<div class="wrapButtonBack">
+						<div data-wow-duration="1s" data-wow-delay="3.2s" class="buttonBack wow fadeInUp">${{ index.retarget.BackToDescription }}$</div>
+					</div>
+				</div>
+			</section>
+			<footer class="footer">
+				<div class="wrap"><a href="https://affiliate.iqoption.com/" class="link">affiliate.iqoption.com</a>
+					<div class="footerWrap">
+						<img src="../assets/images/logo@2x.png" class="logo">
+						<div class="text">${{ index.base.termsConditionsFooter }}$</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="../assets/scripts/libs/wow/dist/wow.js"></script>
+		<script src="../assets/scripts/common.min.js?1488819163743"></script>
+		<section id="counters">
+			<!-- Start. AdRoll counter-->
+			<script type="text/javascript">
+				adroll_adv_id = "24XOIFROC5GDRFNQZU34WC";
+				adroll_pix_id = "MZT3MWYWWZDR3CLURTSTBN";
+				
+				/* OPTIONAL: provide email to improve user identification */
+				/* adroll_email = "username@example.com"; */
+				
+				(function () {
+				    var _onload = function () {
+				        if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+				            setTimeout(_onload, 10);
+				            return
+				        }
+				        if (!window.__adroll_loaded) {
+				            __adroll_loaded = true;
+				            setTimeout(_onload, 50);
+				            return
+				        }
+				        var scr = document.createElement("script");
+				        var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+				        scr.setAttribute('async', 'true');
+				        scr.type = "text/javascript";
+				        scr.src = host + "/j/roundtrip.js";
+				        ((document.getElementsByTagName('head') || [null])[0] ||
+				        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+				    };
+				    
+				    if (window.addEventListener) {
+				        window.addEventListener('load', _onload, false);
+				    }
+				    
+				    else {
+				        window.attachEvent('onload', _onload)
+				    }
+				    
+				}());
+			</script>
+			<!-- End. AdRoll counter-->
+		</section>
+	</body>
+
+</html>

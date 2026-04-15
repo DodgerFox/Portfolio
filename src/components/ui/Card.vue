@@ -1,10 +1,11 @@
 <template>
-  <a
+  <component
+    :is="card.link ? 'a' : 'div'"
     class="card"
     :class="card?.options"
-    :href="card.link"
+    :href="card.link || undefined"
     :style="{ backgroundImage: `url('./images/projects/${card.image}')` }"
-    target="_blank"
+    :target="card.link ? '_blank' : undefined"
   >
     <div class="card-content">
       <div class="card-tags">
@@ -18,7 +19,7 @@
         <p class="card__description">{{ card.description }}</p>
       </div>
     </div>
-  </a>
+  </component>
 </template>
 
 <script setup lang="ts">

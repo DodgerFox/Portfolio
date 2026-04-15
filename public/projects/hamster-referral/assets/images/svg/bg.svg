@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="626px" height="707px" viewBox="0 0 626 707" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>2F382775-1755-45C6-8864-D2884EE64BAE</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M0,45.6756757 C83.1495913,27.6401783 164.482925,14.8927638 244,7.43343226 C323.517075,-0.0258992984 404.850409,-1.87124004 488,1.89741005 L488,567.37196 C415.049085,570.608423 336.730222,569.01944 253.043409,562.605012 C169.356595,556.190583 85.0087927,542.131997 0,520.429255 L0,45.6756757 Z" id="path-1"></path>
+        <filter x="-24.6%" y="-15.8%" width="149.2%" height="142.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="30" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="35" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.313190901   0 0 0 0 0.313190901   0 0 0 0 0.313190901  0 0 0 0.365857111 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-763.000000, -5.000000)">
+            <g id="Form" transform="translate(832.000000, 44.000000)">
+                <g id="bg">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

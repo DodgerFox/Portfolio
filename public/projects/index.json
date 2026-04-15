@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-04-13T15:30:49.249Z",
+  "projects": [
+    {
+      "slug": "ach",
+      "source": "ACH/site/ACH/dist",
+      "url": "/projects/ach/index.html"
+    },
+    {
+      "slug": "ap-hotel",
+      "source": "AP-Hotel/land/workplace/AP-Hotel",
+      "url": "/projects/ap-hotel/index.html"
+    },
+    {
+      "slug": "aston-martin",
+      "source": "AstonMartin/land/aston-martin/dist",
+      "url": "/projects/aston-martin/index.html"
+    },
+    {
+      "slug": "bitex",
+      "source": "Bitex/dist",
+      "url": "/projects/bitex/index.html"
+    },
+    {
+      "slug": "bw",
+      "source": "BW/site/Breaking.Web/dist",
+      "url": "/projects/bw/index.html"
+    },
+    {
+      "slug": "cloud-mining",
+      "source": "CloudMining/dist",
+      "url": "/projects/cloud-mining/index.html"
+    },
+    {
+      "slug": "gazprom",
+      "source": "Gazprom/dist",
+      "url": "/projects/gazprom/index.html"
+    },
+    {
+      "slug": "international",
+      "source": "International/dist",
+      "url": "/projects/international/index.html"
+    },
+    {
+      "slug": "rebox",
+      "source": "rebox/site/rebox/dist",
+      "url": "/projects/rebox/index.html"
+    },
+    {
+      "slug": "scam",
+      "source": "Scam/dist",
+      "url": "/projects/scam/index.html"
+    },
+    {
+      "slug": "sugar-of-kuban",
+      "source": "Sugar of kuban/land/Sugar/dist",
+      "url": "/projects/sugar-of-kuban/index.html"
+    },
+    {
+      "slug": "uefa",
+      "source": "UEFA/land/UEFA/hjh/dist",
+      "url": "/projects/uefa/index.html"
+    },
+    {
+      "slug": "veles",
+      "source": "Veles/dist",
+      "url": "/projects/veles/index.html"
+    },
+    {
+      "slug": "wildfox",
+      "source": "WildFox — land/land/WildFoxLand/dist",
+      "url": "/projects/wildfox/index.html"
+    },
+    {
+      "slug": "zamutkin",
+      "source": "Zamutkin/dist",
+      "url": "/projects/zamutkin/index.html"
+    },
+    {
+      "slug": "et",
+      "source": "ET",
+      "url": "/projects/et/index.html"
+    },
+    {
+      "slug": "hamster-referral",
+      "source": "Hasmter-referral",
+      "url": "/projects/hamster-referral/index.html"
+    },
+    {
+      "slug": "moniad",
+      "source": "Moniad",
+      "url": "/projects/moniad/index.html"
+    },
+    {
+      "slug": "sugarofkuban-static",
+      "source": "SugarOfKuban",
+      "url": "/projects/sugarofkuban-static/index.html"
+    },
+    {
+      "slug": "apline",
+      "source": "Apline/dist",
+      "url": "/projects/apline/index.html"
+    },
+    {
+      "slug": "chicchain",
+      "source": "chicchain",
+      "url": "/projects/chicchain/index.html"
+    },
+    {
+      "slug": "myplannr",
+      "source": "MyPlannr",
+      "url": "/projects/myplannr/index.html"
+    },
+    {
+      "slug": "amaya-soft",
+      "source": "Amaya-Soft/dist",
+      "url": "/projects/amaya-soft/index.html"
+    },
+    {
+      "slug": "buildings",
+      "source": "buildings/dist",
+      "url": "/projects/buildings/index.html"
+    },
+    {
+      "slug": "codespizza",
+      "source": "CodesPizza-vue/dist",
+      "url": "/projects/codespizza/index.html"
+    }
+  ]
+}

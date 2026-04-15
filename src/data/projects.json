@@ -1,869 +1,1004 @@
 [
-    {
+  {
+    "id": 1,
+    "title": "WildWood online",
+    "description": "Сервис для любителей экстремальных видом спорта",
+    "link": "https://wiildwood.netlify.app/",
+    "image": "wildwood.png",
+    "tags": [
+      {
         "id": 1,
-        "title": "WildWood online",
-        "description": "Сервис для любителей экстремальных видом спорта",
-        "link": "https://wiildwood.netlify.app/",
-        "image": "wildwood.png",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            },
-            {
-                "id": 4,
-                "name": {
-                    "ru": "Свой проект",
-                    "en": "My project"
-                },
-                "color": "violet"
-            }
-        ]
-    },
-    {
-        "id": 1,
-        "title": "H3K9me3",
-        "description": "Сайт для выгрузки данных по научному открытию в области ДНК",
-        "link": "https://h3k9me3.netlify.app/",
-        "image": "H3K9me3.png",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 1,
-        "title": "Begemot-Begemot",
-        "description": "Full stack app development for businesses",
-        "link": "https://www.thebetterbunch.com/",
-        "image": "Begemot-Begemot.webp",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
         "id": 2,
-        "title": "Kolomna-mo",
-        "description": "Сайт для администрации муниципального округа Коломна",
-        "link": "https://kolomna-mo.ru/",
-        "image": "kolomna.webp",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 37,
-        "title": "Made in Gym",
-        "description": "Сайт для тренаженого зала MIG",
-        "link": "https://madeingym.com/",
-        "image": "MIG.jpg",
-        "options": {
-            "lightText": true
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
         },
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 38,
-        "title": "Русский лен",
-        "description": "Сайт для компании «Русский Лён» — инновационное предприятие, целью которого является возрождение льняной отрасли страны.",
-        "link": "https://russianlinen.ru/",
-        "image": "rl.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 17,
-        "title": "GazpromNeft",
-        "description": "«Кубок Газпром нефти» — крупнейшее европейское хоккейное соревнование для детей до 11 лет. Уровень организации ничем не отличается от профессиональных соревнований.",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/GazpromNeft/index.html",
-        "image": "GZPRM.jpg",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 29,
-        "title": "Сахар Кубани",
-        "description": "Сайт для Краснодарской компании Сахар Кубани",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/SugarOfKuban/index.html",
-        "image": "sahar.jpg",
-        "options": {
-            "lightText": true
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
         },
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 3,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 35,
-        "title": "Главпиво",
-        "description": "Сайт для сети магазинов Главпиво",
-        "link": "https://glav-beer.ru/",
-        "image": "Glavpivo.jpg",
-        "options": {
-            "lightText": true
-        },
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 36,
-        "title": "Breaking Web",
-        "description": "Сайт - портфолио для компании разработчиков Bewaking Web",
-        "link": "https://brwb.ru/",
-        "image": "bw.webp",
-        "options": {
-            "lightText": true
-        },
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "title": "ACMG",
-        "description": "Надежный помошник в мире инвестиций",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/ACMC/index.html",
-        "image": "acmg.webp",
-        "options": {
-            "lightText": true
-        },
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
+        "color": "blue"
+      },
+      {
         "id": 4,
-        "title": "IMR",
-        "description": "Надежный помошник в мире инвестиций",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/IMR/index.html",
-        "image": "imr.webp",
-        "options": {
-            "lightText": true
+        "name": {
+          "ru": "Свой проект",
+          "en": "My project"
         },
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "title": "Главбух",
-        "description": "Бухгалтерский марафон",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/AlkoDesign/index.html",
-        "image": "Glavbuh.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "title": "Alpine",
-        "description": "Все виды высотных работ по строительному альпинизму со своим оборудованием",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Alpine/index.html",
-        "image": "alpine.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "title": "AltaiPalaceHotel",
-        "description": "Сайт для элитного отеля",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/AltaiPalaceHotel/index.html",
-        "image": "altai.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "title": "Amber",
-        "description": "Международный экономический форум янтарной отрасли",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/amber/index.html",
-        "image": "forum.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 9,
-        "title": "APISender",
-        "description": "Программный комплекс APISender для рассылок WhatsApp и SMS позволяет отправлять сообщения через собственные сим-карты и аккаунты WhatsApp.",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/APISender/index.html",
-        "image": "apisender.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 11,
-        "title": "Bitex",
-        "description": "Exchange currency at the best rate",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Bitex/index.html",
-        "image": "Bitex.webp",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 12,
-        "title": "Borscht-Career",
-        "description": "Карьерный сайт для компании borscht",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Borscht-Career/index.html",
-        "image": "borscht.jpg",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 13,
-        "title": "Danke",
-        "description": "Тестовое задание для Danke",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Danke/index.html",
-        "image": "danke.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 14,
-        "title": "EcoTech",
-        "description": "Сайт для диджитал компании EcoTech",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/ecotech/index.html",
-        "image": "ecotech.png",
-        "options": {
-            "lightText": true
+        "color": "violet"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "H3K9me3",
+    "description": "Сайт для выгрузки данных по научному открытию в области ДНК",
+    "link": "https://h3k9me3.netlify.app/",
+    "image": "H3K9me3.png",
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
         },
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 15,
-        "title": "FinancialGuide",
-        "description": "Лучшие инвестиционные идеи месяца",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/FinancialGuide/index.html",
-        "image": "fg.png",
-        "options": {
-            "lightText": true
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
         },
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Begemot-Begemot",
+    "description": "Full stack app development for businesses",
+    "link": "https://www.thebetterbunch.com/",
+    "image": "Begemot-Begemot.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Kolomna-mo",
+    "description": "Сайт для администрации муниципального округа Коломна",
+    "link": "https://kolomna-mo.ru/",
+    "image": "kolomna.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Made in Gym",
+    "description": "Сайт для тренаженого зала MIG",
+    "link": "https://madeingym.com/",
+    "image": "MIG.jpg",
+    "options": {
+      "lightText": true
     },
-    {
-        "id": 16,
-        "title": "FreeSender",
-        "description": "Программа FreeSender для рассылок WhatsApp и SMS позволяет отправлять сообщения с компьютера бесплатно в неограниченных количествах.",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/FreeSender/index.html",
-        "image": "freesender.png",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Русский лен",
+    "description": "Сайт для компании «Русский Лён» — инновационное предприятие, целью которого является возрождение льняной отрасли страны.",
+    "link": "https://russianlinen.ru/",
+    "image": "rl.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "GazpromNeft",
+    "description": "«Кубок Газпром нефти» — крупнейшее европейское хоккейное соревнование для детей до 11 лет. Уровень организации ничем не отличается от профессиональных соревнований.",
+    "link": "/projects/gazprom/index.html",
+    "image": "GZPRM.jpg",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Сахар Кубани",
+    "description": "Сайт для Краснодарской компании Сахар Кубани",
+    "link": "/projects/sugar-of-kuban/index.html",
+    "image": "sahar.jpg",
+    "options": {
+      "lightText": true
     },
-    {
-        "id": 18,
-        "title": "Hamster.io",
-        "description": "Hamster Marketplace Referral Program",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Hamster/index.html",
-        "image": "Hamster.jpg",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 3,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Главпиво",
+    "description": "Сайт для сети магазинов Главпиво",
+    "link": "https://glav-beer.ru/",
+    "image": "Glavpivo.jpg",
+    "options": {
+      "lightText": true
     },
-    {
-        "id": 19,
-        "title": "Hunter",
-        "description": "Электронные манки с влагозащитой, звучанием до 8 км и гарантией 12 месяцев",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Hunter/index.html",
-        "image": "hunter.png",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Breaking Web",
+    "description": "Сайт - портфолио для компании разработчиков Bewaking Web",
+    "link": "/projects/bw/index.html",
+    "image": "bw.webp",
+    "options": {
+      "lightText": true
     },
-    {
-        "id": 20,
-        "title": "IQOption",
-        "description": "IQOption верстка email рассылки",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/IQOption/index.html",
-        "image": "iqoption.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "ACMG",
+    "description": "Надежный помошник в мире инвестиций",
+    "link": "/projects/international/index.html",
+    "image": "acmg.webp",
+    "options": {
+      "lightText": true
     },
-    {
-        "id": 21,
-        "title": "ITsagency",
-        "description": "Верстка тестового задания для itsagency",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/itsagency/index.html",
-        "image": "itagency.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "IMR",
+    "description": "Надежный помошник в мире инвестиций",
+    "link": "/projects/international/index.html",
+    "image": "imr.webp",
+    "options": {
+      "lightText": true
     },
-    {
-        "id": 22,
-        "title": "Lebedev",
-        "description": "Верстка тестового задания для слудии Лебедева",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Lebedev/index.html",
-        "image": "lebedev.png",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Главбух",
+    "description": "Бухгалтерский марафон",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/AlkoDesign/index.html",
+    "image": "Glavbuh.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Alpine",
+    "description": "Все виды высотных работ по строительному альпинизму со своим оборудованием",
+    "link": "/projects/apline/index.html",
+    "image": "alpine.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "AltaiPalaceHotel",
+    "description": "Сайт для элитного отеля",
+    "link": "/projects/ap-hotel/index.html",
+    "image": "altai.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Amber",
+    "description": "Международный экономический форум янтарной отрасли",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/amber/index.html",
+    "image": "forum.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "APISender",
+    "description": "Программный комплекс APISender для рассылок WhatsApp и SMS позволяет отправлять сообщения через собственные сим-карты и аккаунты WhatsApp.",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/APISender/index.html",
+    "image": "apisender.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Bitex",
+    "description": "Exchange currency at the best rate",
+    "link": "/projects/bitex/index.html",
+    "image": "Bitex.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Borscht-Career",
+    "description": "Карьерный сайт для компании borscht",
+    "link": "https://borscht.mobi/career/",
+    "image": "borscht.jpg",
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Danke",
+    "description": "Тестовое задание для Danke",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/Danke/index.html",
+    "image": "danke.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "EcoTech",
+    "description": "Сайт для диджитал компании EcoTech",
+    "link": "/projects/et/index.html",
+    "image": "ecotech.png",
+    "options": {
+      "lightText": true
     },
-    {
-        "id": 24,
-        "title": "Meduza",
-        "description": "Верстка сайта для модного магазина meduza",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Meduzцйцвй/index.html",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "FinancialGuide",
+    "description": "Лучшие инвестиционные идеи месяца",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/FinancialGuide/index.html",
+    "image": "fg.png",
+    "options": {
+      "lightText": true
     },
-    {
-        "id": 25,
-        "title": "Monia",
-        "description": "Верстка сайта для модельера одежды Наталии Камец",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Monia/index.html",
-        "image": "Monia.webp",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 26,
-        "title": "ReBox",
-        "description": "Наборы продуктов с рецептами на каждый день",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/rebox/index.html",
-        "image": "rebox.jpg",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 27,
-        "title": "СамогонЪ",
-        "description": "Сайт популярного журнала Самогонъ",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Samogon/index.html",
-        "image": "smgn.png",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 3,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 28,
-        "title": "Scam Indicator",
-        "description": "Индикатор скама",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Scam/index.html",
-        "image": "Scam.webp",
-        "tags": [
-            {
-                "id": 1,
-                "name": {
-                    "ru": "Дизайн",
-                    "en": "Design"
-                },
-                "color": "orange"
-            },
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            }
-        ]
-    },
-    {
-        "id": 32,
-        "title": "Veles",
-        "description": "",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Veles/index.html",
-        "image": "Veles.webp",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 3,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 33,
-        "title": "Замуткин",
-        "description": "Учи английский по 7 слов в минуту",
-        "link": "http://alexey-chern-ru.1gb.ru/Works/link/Zamutkin/index.html",
-        "image": "Zamutk.webp",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 3,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    },
-    {
-        "id": 34,
-        "title": "PayDrivers",
-        "description": "Paydrivers - платформа для развлечений автолюбителей",
-        "link": "https://vc.ru/u/542483-pay/240894-paydrivers-platforma-dlya-razvlechenii-avtolyubitelei",
-        "image": "PD1.webp",
-        "tags": [
-            {
-                "id": 2,
-                "name": {
-                    "ru": "Фронтенд",
-                    "en": "Frontend"
-                },
-                "color": "green"
-            },
-            {
-                "id": 3,
-                "name": {
-                    "ru": "Бэкенд",
-                    "en": "Backend"
-                },
-                "color": "blue"
-            }
-        ]
-    }
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "FreeSender",
+    "description": "Программа FreeSender для рассылок WhatsApp и SMS позволяет отправлять сообщения с компьютера бесплатно в неограниченных количествах.",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/FreeSender/index.html",
+    "image": "freesender.png",
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Hamster.io",
+    "description": "Hamster Marketplace Referral Program",
+    "link": "/projects/hamster-referral/index.html",
+    "image": "Hamster.jpg",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Hunter",
+    "description": "Электронные манки с влагозащитой, звучанием до 8 км и гарантией 12 месяцев",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/Hunter/index.html",
+    "image": "hunter.png",
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "IQOption",
+    "description": "IQOption верстка email рассылки",
+    "link": "/projects/uefa/index.html",
+    "image": "iqoption.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "ITsagency",
+    "description": "Верстка тестового задания для itsagency",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/itsagency/index.html",
+    "image": "itagency.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Lebedev",
+    "description": "Верстка тестового задания для слудии Лебедева",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/Lebedev/index.html",
+    "image": "lebedev.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Meduza",
+    "description": "Верстка сайта для модного магазина meduza",
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Monia",
+    "description": "Верстка сайта для модельера одежды Наталии Камец",
+    "link": "/projects/moniad/index.html",
+    "image": "Monia.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "ReBox",
+    "description": "Наборы продуктов с рецептами на каждый день",
+    "link": "/projects/rebox/index.html",
+    "image": "rebox.jpg",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "СамогонЪ",
+    "description": "Сайт популярного журнала Самогонъ",
+    "link": "http://alexey-chern-ru.1gb.ru/Works/link/Samogon/index.html",
+    "image": "smgn.png",
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 3,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Scam Indicator",
+    "description": "Индикатор скама",
+    "link": "/projects/scam/index.html",
+    "image": "Scam.webp",
+    "tags": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Дизайн",
+          "en": "Design"
+        },
+        "color": "orange"
+      },
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Veles",
+    "description": "",
+    "link": "/projects/veles/index.html",
+    "image": "Veles.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 3,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Замуткин",
+    "description": "Учи английский по 7 слов в минуту",
+    "link": "/projects/zamutkin/index.html",
+    "image": "Zamutk.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 3,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "PayDrivers",
+    "description": "Paydrivers - платформа для развлечений автолюбителей",
+    "link": "https://vc.ru/u/542483-pay/240894-paydrivers-platforma-dlya-razvlechenii-avtolyubitelei",
+    "image": "PD1.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      },
+      {
+        "id": 3,
+        "name": {
+          "ru": "Бэкенд",
+          "en": "Backend"
+        },
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Borscht",
+    "description": "Сайт Borscht",
+    "link": "https://borscht.mobi/",
+    "image": "borscht.jpg",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Aston Martin",
+    "description": "Landing Aston Martin",
+    "link": "/projects/aston-martin/index.html",
+    "image": "aston-martin.jpg",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "title": "CloudMining",
+    "description": "Landing Cloud Mining",
+    "link": "/projects/cloud-mining/index.html",
+    "image": "cloud-mining.jpg",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "title": "ChicChain",
+    "description": "Landing ChicChain",
+    "link": "/projects/chicchain/index.html",
+    "image": "chicchain.jpg",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "title": "MyPlannr",
+    "description": "Landing MyPlannr",
+    "link": "/projects/myplannr/index.html",
+    "image": "myplannr.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Amaya Soft",
+    "description": "Landing Amaya Soft",
+    "link": "/projects/amaya-soft/index.html",
+    "image": "amaya-soft.webp",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Buildings",
+    "description": "Landing Buildings",
+    "link": "/projects/buildings/index.html",
+    "image": "buildings.jpg",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "title": "CodesPizza",
+    "description": "Web app CodesPizza",
+    "link": "/projects/codespizza/index.html",
+    "image": "codespizza.png",
+    "tags": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Фронтенд",
+          "en": "Frontend"
+        },
+        "color": "green"
+      }
+    ]
+  }
 ]

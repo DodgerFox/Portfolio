@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="icon_arrow-grey">
+    <!-- Generator: sketchtool 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>8D33C483-C321-4E23-9DA3-BC4E85EB81CF</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M12.8229399,4.52220881 L8.95436006,0.197878646 C8.71832833,-0.0659595486 8.33553235,-0.0659595486 8.09950062,0.197878646 C7.86342053,0.461770894 7.86342053,0.889555256 8.09950062,1.1534475 L10.9361852,4.32431665 L0.604465606,4.32431665 C0.27065552,4.32431665 0,4.6268576 0,4.99999324 C0,5.37307483 0.27065552,5.67566983 0.604465606,5.67566983 L10.9361852,5.67566983 L8.09959733,8.84653898 C7.86351725,9.11043123 7.86351725,9.53821559 8.09959733,9.80210784 C8.21758902,9.93394586 8.37233221,10 8.52702705,10 C8.68172189,10 8.83641673,9.93394586 8.95445677,9.80210784 L12.8229399,5.47777767 C13.05902,5.21388542 13.05902,4.78610106 12.8229399,4.52220881 Z" id="path-1"></path>
+    </defs>
+    <g id="btn/match_page-view" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-56.000000, -5.000000)">
+        <g id="Group" transform="translate(10.000000, 0.000000)">
+            <g id="ui/btn-arrow/grey" transform="translate(46.000000, 5.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#999999" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

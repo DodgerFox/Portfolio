@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="icon_arrow-white">
+    <!-- Generator: sketchtool 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>41A93307-72CA-43C2-99CA-608DAAF725D1</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M11.8365599,3.61776705 L8.26556313,0.158302917 C8.04768769,-0.0527676389 7.69433755,-0.0527676389 7.47646211,0.158302917 C7.25854203,0.369416715 7.25854203,0.711644205 7.47646211,0.922758004 L10.0949402,3.45945332 L0.557968252,3.45945332 C0.249835864,3.45945332 0,3.70148608 0,3.99999459 C0,4.29845986 0.249835864,4.54053587 0.557968252,4.54053587 L10.0949402,4.54053587 L7.47655138,7.07723119 C7.2586313,7.28834498 7.2586313,7.63057247 7.47655138,7.84168627 C7.58546679,7.94715669 7.72830666,8 7.87110189,8 C8.01389713,8 8.15669236,7.94715669 8.2656524,7.84168627 L11.8365599,4.38222214 C12.05448,4.17110834 12.05448,3.82888085 11.8365599,3.61776705 Z" id="path-1"></path>
+    </defs>
+    <g id="06_1-team-profile/1400" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1289.000000, -3395.000000)">
+        <g id="видео" transform="translate(80.000000, 3379.000000)">
+            <g id="btn/blue-" transform="translate(1060.000000, 0.000000)">
+                <g id="Stacked-Group" transform="translate(19.000000, 10.000000)">
+                    <g id="ui/btn-arrow/white" transform="translate(130.000000, 6.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
