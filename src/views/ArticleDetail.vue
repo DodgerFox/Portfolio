@@ -37,8 +37,18 @@
         <section class="article-content__section">
           <div class="article-content__code-head">
             <h2>{{ article.codeTitle[currentLocale] }}</h2>
-            <button type="button" class="article-content__copy" @click="copyCode" :title="currentLocale === 'ru' ? 'Копировать код' : 'Copy code'">
-              {{ copied ? '✅' : '📋' }}
+            <button
+              type="button"
+              class="article-content__copy"
+              :class="{ 'is-copied': copied }"
+              @click="copyCode"
+              :title="currentLocale === 'ru' ? 'Копировать код' : 'Copy code'"
+              :aria-label="currentLocale === 'ru' ? 'Копировать код' : 'Copy code'"
+            >
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="9" y="9" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.8" />
+                <path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
             </button>
           </div>
           <pre><code>{{ article.code }}</code></pre>
@@ -280,6 +290,7 @@ function formatDate(dateString: string) {
     border 1px solid #2a2a2a
     border-radius 20px
     padding 16px
+    min-height initial
     h2
       margin 0 0 12px
       color #fff
@@ -314,8 +325,23 @@ function formatDate(dateString: string) {
     border 1px solid #3a3a3a
     border-radius 10px
     color #fff
-    padding 6px 10px
+    width 42px
+    height 42px
+    display inline-flex
+    align-items center
+    justify-content center
+    padding 0
     cursor pointer
+    transition .2s ease all
+    svg
+      width 20px
+      height 20px
+    &:hover
+      border-color #4f6073
+      color #d8eaff
+    &.is-copied
+      color #8df8c6
+      border-color rgba(141, 248, 198, .45)
 
 .article-page--not-found
   min-height 60vh
@@ -348,4 +374,6 @@ function formatDate(dateString: string) {
       margin 0
       padding 0 12px
 
+.article-related
+  min-height initial
 </style>
