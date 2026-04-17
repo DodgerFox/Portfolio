@@ -1,6 +1,9 @@
 [build]
   publish = "dist"
-  command = "npm run build-only"
+  command = "pnpm run build-only"
+
+[build.environment]
+  NODE_VERSION = "22"
 
 [[redirects]]
   from = "/*"

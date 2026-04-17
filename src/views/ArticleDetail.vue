@@ -9,7 +9,7 @@
         <h1>{{ article.title[currentLocale] }}</h1>
         <p class="article-page__meta">{{ formatDate(article.publishedAt) }} · {{ article.readTime }}</p>
         <div class="article-page__tags">
-          <span class="article-page__tag" v-for="tag in article.tags" :key="tag.id">{{ tag.icon }} {{ tag.title[currentLocale] }}</span>
+          <span class="article-page__tag" v-for="tag in article.tags" :key="tag.id">{{ tag.title[currentLocale] }}</span>
         </div>
         <p class="article-page__lead">{{ article.summary[currentLocale] }}</p>
       </div>
@@ -19,8 +19,11 @@
       <aside class="article-page__toc">
         <p class="article-page__toc-title">{{ currentLocale === 'ru' ? 'Содержание' : 'Contents' }}</p>
         <ul>
-          <li v-for="section in article.sections" :key="section.id">
-            <a :href="`#${section.id}`">{{ section.title[currentLocale] }}</a>
+          <li v-for="(section, index) in article.sections" :key="section.id">
+            <a :href="`#${section.id}`">
+              <span class="article-page__toc-num">{{ String(index + 1).padStart(2, '0') }}</span>
+              <span class="article-page__toc-text">{{ section.title[currentLocale] }}</span>
+            </a>
           </li>
         </ul>
       </aside>
@@ -69,12 +72,12 @@ import { useI18n } from 'vue-i18n'
 import { useHead } from '@unhead/vue'
 import { articles, getArticleBySlug } from '@/data/articles'
 import { LOCALES } from '@/types/environment'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 
 const route = useRoute()
 const { locale } = useI18n()
 const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
 const copied = ref(false)
-import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 
 const article = computed(() => getArticleBySlug(String(route.params.slug || '')))
 const relatedArticles = computed(() => articles.filter((item) => item.slug !== article.value?.slug).slice(0, 3))
@@ -213,28 +216,59 @@ function formatDate(dateString: string) {
     object-fit cover
     border-radius 24px
 
-.article-content__section
-  p
-    color #dfdfdf
-    line-height 1.8
-  h2
-    color #fff
-
+.article-page
   &__toc
-    background #191919
-    border 1px solid #2d2d2d
-    border-radius 20px
-    padding 16px
+    background linear-gradient(135deg, #121318 0%, #0e1114 100%)
+    border 1px solid #2f3942
+    border-radius 22px
+    padding 18px
+    box-shadow inset 0 1px 0 rgba(255, 255, 255, .05)
     ul
       margin 0
-      padding-left 20px
+      padding 0
+      list-style none
+      display flex
+      flex-direction column
+      gap 8px
+    li
+      margin 0
     a
-      color #b7d8ff
+      color #d8eaff
       text-decoration none
+      display flex
+      align-items center
+      gap 10px
+      padding 8px 10px
+      border-radius 12px
+      transition .18s ease all
+      &:hover
+        background rgba(151, 197, 255, .1)
+        transform translateX(2px)
 
   &__toc-title
     color #fff
-    margin-bottom 10px
+    margin-bottom 12px
+    font-size 13px
+    font-weight 700
+    text-transform uppercase
+    letter-spacing .12em
+
+  &__toc-num
+    width 30px
+    height 30px
+    border-radius 10px
+    display inline-flex
+    align-items center
+    justify-content center
+    background rgba(126, 182, 255, .14)
+    border 1px solid rgba(126, 182, 255, .25)
+    color #b9d8ff
+    font-size 12px
+    font-weight 700
+
+  &__toc-text
+    font-size 15px
+    line-height 1.4
 
 .article-content
   display flex
@@ -246,6 +280,28 @@ function formatDate(dateString: string) {
     border 1px solid #2a2a2a
     border-radius 20px
     padding 16px
+    h2
+      margin 0 0 12px
+      color #fff
+      line-height 1.35
+    p
+      margin 0 0 12px
+      color #d8d8d8
+      line-height 1.8
+    p:last-child
+      margin-bottom 0
+    pre
+      margin 12px 0 0
+      background #06080b
+      border 1px solid #1e2630
+      border-radius 14px
+      padding 14px
+      overflow-x auto
+    code
+      color #bfffd2
+      font-family ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+      font-size 14px
+      line-height 1.6
 
   &__code-head
     display flex
@@ -260,27 +316,6 @@ function formatDate(dateString: string) {
     color #fff
     padding 6px 10px
     cursor pointer
-
-    h2
-      margin 0 0 14px
-      color #fff
-
-    p
-      color #dfdfdf
-      line-height 1.7
-      margin 0 0 8px
-
-    pre
-      background #050607
-      border 1px solid #333
-      border-radius 12px
-      padding 12px
-      overflow auto
-
-    code
-      color #bcffcf
-      font-family ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
-      font-size 14px
 
 .article-page--not-found
   min-height 60vh
@@ -313,16 +348,4 @@ function formatDate(dateString: string) {
       margin 0
       padding 0 12px
 
-.lang-toggle
-  font-size 14px
-  color white
-  background transparent
-  border 1px solid white
-  border-radius 999px
-  padding 6px 12px
-  cursor pointer
-  transition .2s all ease
-  &:hover
-    background white
-    color #111
 </style>

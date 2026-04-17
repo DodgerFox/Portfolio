@@ -18,7 +18,7 @@
             </div>
           </div>
           <div class="welcome-profile__avatar" v-if="!aboutIsOpen">
-            <img src="@/assets/images/avatar.webp" alt="Alexey Chernov avatar" srcset="" />
+            <img :src="avatarSrc" alt="Alexey Chernov avatar" @error="onAvatarError" />
           </div>
           <div class="welcome-content" v-if="!aboutIsOpen">
             <h2 class="welcome-content__title">{{ $t('welcome.hi') }}</h2>
@@ -79,6 +79,12 @@ const notificationsStore = NotificationsStore()
 
 const aboutIsOpen = ref(false)
 const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
+const avatarSrc = ref('/images/avatar-latest.jpg')
+
+function onAvatarError(event: Event) {
+  const target = event.target as HTMLImageElement
+  target.src = '/images/avatar.webp'
+}
 
 useHead({
   title: 'Alexey Chernov - Designer & Full-Stack developer',
@@ -183,7 +189,9 @@ function later() {
     padding-bottom 30px
     container-type inline-size
     img
-      max-width 100%
+      width 100%
+      height 100%
+      object-fit cover
     @media screen and (max-width: 1100px)
       width 40%
     @media screen and (max-width: 850px)

@@ -13,7 +13,7 @@
         <div class="tags-wrap">
           <button class="tag-btn" :class="{ active: selectedTag === 'all' }" @click="selectTag('all')">{{ $t('global.all') }}</button>
           <button v-for="tag in uniqueTags" :key="tag.id" class="tag-btn" :class="{ active: selectedTag === tag.id }" @click="selectTag(tag.id)">
-            {{ tag.icon }} {{ tag.title[currentLocale] }}
+            {{ tag.title[currentLocale] }}
           </button>
         </div>
       </div>
@@ -24,7 +24,7 @@
           <p class="article-card__meta">{{ formatDate(item.publishedAt) }} · {{ item.readTime }}</p>
           <h2 class="article-card__title">{{ item.title[currentLocale] }}</h2>
           <div class="article-card__tags">
-            <span class="article-card__tag" v-for="tag in item.tags" :key="`${item.id}-${tag.id}`">{{ tag.icon }} {{ tag.title[currentLocale] }}</span>
+            <span class="article-card__tag" v-for="tag in item.tags" :key="`${item.id}-${tag.id}`">{{ tag.title[currentLocale] }}</span>
           </div>
           <p class="article-card__description">{{ item.summary[currentLocale] }}</p>
         </router-link>

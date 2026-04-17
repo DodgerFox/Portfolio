@@ -1,7 +1,7 @@
 <template>
   <div class="lang-switcher">
     <div class="lang-icon">
-      <inline-svg src="@/assets/icons/globe.svg" />
+      <inline-svg src="/icons/globe.svg" />
     </div>
     <ul class="droplist">
       <li v-for="(lang, index) in locales" :key="index" @click="setLocale(lang)">
@@ -34,6 +34,7 @@ function setLocale(lang: string) {
     align-items center
     justify-content center
     cursor pointer
+    color #fff
     svg
       width 22px
       height 22px
