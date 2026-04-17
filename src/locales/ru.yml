@@ -3,6 +3,7 @@ global:
   clients: Клиенты
   technologies: Технологии
   articles: Статьи
+  all: Все
 
 locales:
   ru: Русский

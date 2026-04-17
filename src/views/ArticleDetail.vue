@@ -2,10 +2,10 @@
   <section class="article-page" v-if="article">
     <div class="wrap">
       <div class="article-page__head">
-        <div class="article-page__actions">
-          <router-link to="/articles" class="article-page__back">← {{ $t('global.articles') }}</router-link>
-          <button class="lang-toggle" @click="toggleLocale" type="button">🌐 {{ currentLocale.toUpperCase() }}</button>
-        </div>
+          <div class="article-page__actions">
+            <router-link to="/articles" class="article-page__back">← {{ $t('global.articles') }}</router-link>
+            <LanguageSwitcher />
+          </div>
         <h1>{{ article.title[currentLocale] }}</h1>
         <p class="article-page__meta">{{ formatDate(article.publishedAt) }} · {{ article.readTime }}</p>
         <div class="article-page__tags">
@@ -74,13 +74,12 @@ const route = useRoute()
 const { locale } = useI18n()
 const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
 const copied = ref(false)
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 
 const article = computed(() => getArticleBySlug(String(route.params.slug || '')))
 const relatedArticles = computed(() => articles.filter((item) => item.slug !== article.value?.slug).slice(0, 3))
 
-function toggleLocale() {
-  locale.value = locale.value === LOCALES.ru ? LOCALES.en : LOCALES.ru
-}
+// locale switching is handled by LanguageSwitcher component
 
 async function copyCode() {
   if (!article.value?.code) return
@@ -172,6 +171,8 @@ function formatDate(dateString: string) {
     h1
       font-size clamp(46px, 8vw, 112px)
       line-height 1.1
+      overflow-wrap anywhere
+      word-break break-word
 
   &__actions
     display flex
@@ -211,6 +212,13 @@ function formatDate(dateString: string) {
     max-height 460px
     object-fit cover
     border-radius 24px
+
+.article-content__section
+  p
+    color #dfdfdf
+    line-height 1.8
+  h2
+    color #fff
 
   &__toc
     background #191919

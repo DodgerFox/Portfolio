@@ -4,13 +4,22 @@
       <div class="articles-head">
         <h1>{{ $t('global.articles') }}</h1>
         <div class="articles-actions">
-          <button class="lang-toggle" @click="toggleLocale" type="button">🌐 {{ currentLocale.toUpperCase() }}</button>
+          <LanguageSwitcher />
           <router-link to="/" class="articles-link">{{ $t('welcome.portfolio') }}</router-link>
         </div>
       </div>
 
-      <div class="articles-grid">
-        <router-link class="article-card" :to="`/articles/${item.slug}`" v-for="item in articles" :key="item.id">
+      <div class="articles-tags-slider">
+        <div class="tags-wrap">
+          <button class="tag-btn" :class="{ active: selectedTag === 'all' }" @click="selectTag('all')">{{ $t('global.all') }}</button>
+          <button v-for="tag in uniqueTags" :key="tag.id" class="tag-btn" :class="{ active: selectedTag === tag.id }" @click="selectTag(tag.id)">
+            {{ tag.icon }} {{ tag.title[currentLocale] }}
+          </button>
+        </div>
+      </div>
+
+    <div class="articles-grid">
+      <router-link class="article-card" :to="`/articles/${item.slug}`" v-for="item in filteredArticles" :key="item.id">
           <img class="article-card__image" :src="item.image" :alt="item.imageAlt[currentLocale]" loading="lazy" />
           <p class="article-card__meta">{{ formatDate(item.publishedAt) }} · {{ item.readTime }}</p>
           <h2 class="article-card__title">{{ item.title[currentLocale] }}</h2>
@@ -30,13 +39,28 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { articles } from '@/data/articles'
 import { LOCALES } from '@/types/environment'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
+import { ref } from 'vue'
 
 const { locale } = useI18n()
 const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
 
-function toggleLocale() {
-  locale.value = locale.value === LOCALES.ru ? LOCALES.en : LOCALES.ru
+const selectedTag = ref<string | 'all'>('all')
+
+function selectTag(tag: string | 'all') {
+  selectedTag.value = tag
 }
+
+const uniqueTags = computed(() => {
+  const map = new Map<string, any>()
+  articles.forEach((a) => a.tags.forEach((t) => map.set(t.id, t)))
+  return Array.from(map.values())
+})
+
+const filteredArticles = computed(() => {
+  if (selectedTag.value === 'all') return articles
+  return articles.filter((a) => a.tags.some((t) => t.id === selectedTag.value))
+})
 
 useHead({
   title: 'Articles — Alexey Chernov Portfolio',
@@ -95,6 +119,24 @@ function formatDate(dateString: string) {
     display grid
     grid-template-columns repeat(auto-fill, minmax(280px, 1fr))
     gap 20px
+
+.articles-tags-slider
+  overflow-x auto
+  .tags-wrap
+    display flex
+    gap 8px
+    padding 6px 0
+    .tag-btn
+      white-space nowrap
+      border 1px solid rgba(255,255,255,0.06)
+      background transparent
+      color white
+      padding 6px 10px
+      border-radius 999px
+      cursor pointer
+      &.active
+        background white
+        color #111
 
 .article-card
   background #DCFFD0

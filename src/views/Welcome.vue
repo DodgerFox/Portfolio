@@ -13,12 +13,7 @@
                 <inline-svg src="./icons/share.svg" />
               </div>
               <div class="welcome-tool">
-                <inline-svg src="./icons/globe.svg" />
-                <ul class="droplist">
-                  <li v-for="(lang, index) in LOCALES" :key="index" @click="locale = lang">
-                    {{ $t('locales.' + lang) }}
-                  </li>
-                </ul>
+                <LanguageSwitcher />
               </div>
             </div>
           </div>
@@ -72,6 +67,7 @@ import { useHead } from '@unhead/vue'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import InlineSvg from 'vue-inline-svg'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 import projects from '@/data/projects.json'
 import { articles } from '@/data/articles'
 import story from '@/data/story.json'

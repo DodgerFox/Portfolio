@@ -3,6 +3,7 @@ global:
   clients: Clients
   technologies: Technologies
   articles: Articles
+  all: All
 
 locales:
   ru: Russian
