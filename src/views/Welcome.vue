@@ -1,5 +1,5 @@
 <template>
-  <secion class="welcome">
+  <section class="welcome">
     <div class="wrap">
       <h1 class="welcome-title mobile">{{ $t('welcome.portfolio') }}</h1>
       <div class="welcome-blocks">
@@ -23,14 +23,14 @@
             </div>
           </div>
           <div class="welcome-profile__avatar" v-if="!aboutIsOpen">
-            <img src="@/assets/images/avatar.webp" alt="" srcset="" />
+            <img src="@/assets/images/avatar.webp" alt="Alexey Chernov avatar" srcset="" />
           </div>
           <div class="welcome-content" v-if="!aboutIsOpen">
             <h2 class="welcome-content__title">{{ $t('welcome.hi') }}</h2>
             <h3 class="welcome-content__text">{{ $t('welcome.occupation') }}</h3>
           </div>
 
-          <div class="welcome-about" v-else v-html="story[locale]"></div>
+          <div class="welcome-about" v-else v-html="story[currentLocale]"></div>
         </div>
         <div class="welcome-links">
           <h1 class="welcome-title">{{ $t('welcome.portfolio') }}</h1>
@@ -43,10 +43,10 @@
               <div class="welcome-stat__title">31</div>
               <div class="welcome-stat__text">{{ $t('global.clients') }}</div>
             </div>
-            <div class="welcome-block clickable" @click="later">
-              <div class="welcome-stat__title">47</div>
-              <div class="welcome-stat__text">{{ $t('global.technologies') }}</div>
-            </div>
+            <router-link to="/articles" class="welcome-block clickable">
+              <div class="welcome-stat__title">{{ articles.length }}</div>
+              <div class="welcome-stat__text">{{ $t('global.articles') }}</div>
+            </router-link>
             <div class="welcome-block socials">
               <a href="https://t.me/lilborsch" target="_blank" class="socials-item telegram">
                 <inline-svg src="./icons/socials/telegram.svg" width="45" />
@@ -65,21 +65,37 @@
         </div>
       </div>
     </div>
-  </secion>
+  </section>
 </template>
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
+import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import InlineSvg from 'vue-inline-svg'
 import projects from '@/data/projects.json'
+import { articles } from '@/data/articles'
 import story from '@/data/story.json'
+import { NotificationsStore } from '@/stores/notifications'
 import { LOCALES } from '@/types/environment.ts'
 const { locale, t } = useI18n()
 
 const notificationsStore = NotificationsStore()
 
 const aboutIsOpen = ref(false)
+const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
+
+useHead({
+  title: 'Alexey Chernov - Designer & Full-Stack developer',
+  meta: [
+    {
+      name: 'description',
+      content: 'Designer & Full-Stack developer portfolio: real web projects, UI/UX approach, and contacts for collaboration.',
+    },
+  ],
+})
 
 function later() {
-  notificationsStore.addNotification(t('notifications.later'))
+  notificationsStore.addNotification(t('notifications.later'), 6000)
 }
 </script>
 <style lang="stylus">

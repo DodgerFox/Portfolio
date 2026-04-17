@@ -37,3 +37,14 @@ pnpm build
 ```sh
 pnpm lint
 ```
+
+## SEO setup
+
+- The app now applies route-based SEO tags (title, description, canonical, Open Graph, Twitter, JSON-LD).
+- Set your production domain to improve canonical URLs and social previews:
+
+```sh
+VITE_SITE_URL=https://your-domain.tld
+```
+
+- Root crawler files are in `public/robots.txt` and `public/sitemap.xml`.

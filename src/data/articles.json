@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "ru": "Как выбирать стек для лендингов и продуктовых страниц",
+      "en": "How to choose a stack for landing pages and product sites"
+    },
+    "description": {
+      "ru": "Короткий практический гайд по выбору технологий под задачи скорости, SEO и поддержки.",
+      "en": "A practical short guide for choosing technologies based on performance, SEO and maintainability."
+    },
+    "date": "2026-03-10",
+    "readTime": "6 min"
+  },
+  {
+    "id": 2,
+    "title": {
+      "ru": "UI, который продаёт: 7 принципов визуальной иерархии",
+      "en": "UI that sells: 7 principles of visual hierarchy"
+    },
+    "description": {
+      "ru": "Что действительно влияет на конверсию и как внедрить это без полного редизайна.",
+      "en": "What truly impacts conversion and how to improve it without a full redesign."
+    },
+    "date": "2026-02-22",
+    "readTime": "8 min"
+  },
+  {
+    "id": 3,
+    "title": {
+      "ru": "Чеклист SEO для Vue SPA перед релизом",
+      "en": "SEO checklist for Vue SPA before release"
+    },
+    "description": {
+      "ru": "Проверка meta, OG, sitemap, robots, schema и технических моментов, которые часто пропускают.",
+      "en": "Review meta, OG, sitemap, robots, schema and technical pitfalls often missed before launch."
+    },
+    "date": "2026-01-30",
+    "readTime": "7 min"
+  }
+]

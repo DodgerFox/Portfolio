@@ -2,6 +2,7 @@ global:
   projects: Projects
   clients: Clients
   technologies: Technologies
+  articles: Articles
 
 locales:
   ru: Russian

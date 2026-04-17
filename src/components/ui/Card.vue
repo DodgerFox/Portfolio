@@ -2,9 +2,9 @@
   <component
     :is="card.link ? 'a' : 'div'"
     class="card"
-    :class="card?.options"
+    :class="[card?.options, { noImage: !card.image, lightText: isDark }]"
     :href="card.link || undefined"
-    :style="{ backgroundImage: `url('./images/projects/${card.image}')` }"
+    :style="card.image ? { backgroundImage: `url('/images/projects/${card.image}')` } : undefined"
     :target="card.link ? '_blank' : undefined"
   >
     <div class="card-content">
@@ -19,14 +19,84 @@
         <p class="card__description">{{ card.description }}</p>
       </div>
     </div>
+    <!-- SEO / accessibility image: visible to crawlers and screen readers (offscreen for layout) -->
+    <img
+      v-if="card.image"
+      class="card-seo-img"
+      :src="`/images/projects/${card.image}`"
+      :alt="card.title || card.description || 'Project image'"
+      loading="lazy"
+    />
   </component>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { onMounted, ref, watch } from 'vue'
+
 const { locale } = useI18n()
-defineProps<{
+const props = defineProps<{
   card: any
 }>()
+
+const isDark = ref(false)
+
+function analyzeImageBrightness(src: string) {
+  if (!src) return
+  const img = new Image()
+  img.crossOrigin = 'Anonymous'
+  img.src = src
+  img.onload = () => {
+    try {
+      const w = 40
+      const h = 40
+      const canvas = document.createElement('canvas')
+      canvas.width = w
+      canvas.height = h
+      const ctx = canvas.getContext('2d')
+      if (!ctx) return
+      ctx.drawImage(img, 0, 0, w, h)
+      const data = ctx.getImageData(0, 0, w, h).data
+      let total = 0
+      let count = 0
+      // sample every 4th pixel to be fast
+      for (let i = 0; i < data.length; i += 16) {
+        const r = data[i]
+        const g = data[i + 1]
+        const b = data[i + 2]
+        // luminance formula
+        const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
+        total += lum
+        count++
+      }
+      const avg = total / Math.max(1, count)
+      // threshold tuned: below -> dark
+      isDark.value = avg < 140
+    } catch (e) {
+      // if any error, fallback to false
+      isDark.value = false
+    }
+  }
+  img.onerror = () => {
+    isDark.value = false
+  }
+}
+
+onMounted(() => {
+  if (typeof window === 'undefined') return
+  if (props?.card?.image) {
+    // images are served from /images/projects/
+    analyzeImageBrightness(`/images/projects/${props.card.image}`)
+  }
+})
+
+// watch for changes to card.image (if cards are dynamic)
+watch(
+  () => (props as any).card?.image,
+  (val) => {
+    if (val) analyzeImageBrightness(`/images/projects/${val}`)
+  },
+)
 </script>
 
 <style lang="stylus">
@@ -91,4 +161,35 @@ defineProps<{
       color white !important
     .card-tag
       border-color white
+
+  &.gazpromCoverFix
+    background-size calc(100% + 10px) auto
+    background-position center center
+
+  &.noImage
+    background linear-gradient(135deg, #21242b 0%, #121417 100%)
+    border 1px solid #2b2f36
+    .card-content
+      opacity 1
+      backdrop-filter none
+      justify-content center
+      align-items center
+      text-align center
+    .card-tags
+    .card__description
+      display none
+    .card__title
+      color #ffffff
+      font-size 36px
+      letter-spacing 0.5px
+
+  .card-seo-img
+    position absolute
+    width 1px
+    height 1px
+    overflow hidden
+    left -9999px
+    top auto
+    clip rect(1px, 1px, 1px, 1px)
+    border 0
 </style>

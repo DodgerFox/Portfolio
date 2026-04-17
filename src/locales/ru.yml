@@ -2,6 +2,7 @@ global:
   projects: Проекты
   clients: Клиенты
   technologies: Технологии
+  articles: Статьи
 
 locales:
   ru: Русский
