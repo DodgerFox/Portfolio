@@ -2,11 +2,16 @@
   <section class="order-landing">
     <div class="wrap">
       <header class="order-landing__topnav">
-        <router-link to="/">{{ currentLocale === LOCALES.ru ? 'Главная' : 'Home' }}</router-link>
-        <router-link to="/projects">{{ currentLocale === LOCALES.ru ? 'Проекты' : 'Projects' }}</router-link>
-        <router-link to="/articles">{{ currentLocale === LOCALES.ru ? 'Статьи' : 'Articles' }}</router-link>
-        <a href="#cases">{{ currentLocale === LOCALES.ru ? 'Кейсы' : 'Cases' }}</a>
-        <a href="#quiz">{{ currentLocale === LOCALES.ru ? 'Квиз' : 'Quiz' }}</a>
+        <div class="order-landing__topnav-links">
+          <router-link to="/">{{ currentLocale === LOCALES.ru ? 'Главная' : 'Home' }}</router-link>
+          <router-link to="/projects">{{ currentLocale === LOCALES.ru ? 'Проекты' : 'Projects' }}</router-link>
+          <router-link to="/articles">{{ currentLocale === LOCALES.ru ? 'Статьи' : 'Articles' }}</router-link>
+          <a href="#cases">{{ currentLocale === LOCALES.ru ? 'Кейсы' : 'Cases' }}</a>
+          <a href="#quiz">{{ currentLocale === LOCALES.ru ? 'Квиз' : 'Quiz' }}</a>
+        </div>
+        <div class="order-landing__topnav-lang">
+          <LanguageSwitcher />
+        </div>
       </header>
 
       <header class="order-landing__hero">
@@ -36,10 +41,17 @@
         </div>
       </section>
 
-      <section class="order-landing__section" id="process">
-        <h2>{{ content.processTitle }}</h2>
+      <section class="order-landing__section order-landing__process" id="process">
+        <h2>{{ content.processDisplayTitle }}</h2>
+        <p class="order-landing__section-lead">{{ content.processSubtitle }}</p>
+        <div class="process-kpis">
+          <article class="process-kpi" v-for="item in content.processStats" :key="item.label">
+            <p class="process-kpi__value">{{ item.value }}</p>
+            <p class="process-kpi__label">{{ item.label }}</p>
+          </article>
+        </div>
         <div class="process-line" aria-hidden="true">
-          <span v-for="n in 4" :key="`process-node-${n}`" class="process-line__node">{{ String(n).padStart(2, '0') }}</span>
+          <span v-for="n in content.process.length" :key="`process-node-${n}`" class="process-line__node">{{ String(n).padStart(2, '0') }}</span>
         </div>
         <div class="process-grid">
           <article class="process-item" v-for="(step, index) in content.process" :key="step.title">
@@ -48,6 +60,10 @@
             <p>{{ step.text }}</p>
           </article>
         </div>
+        <div class="process-tags">
+          <span class="type-chip" v-for="tag in content.processTags" :key="tag">{{ tag }}</span>
+        </div>
+        <a href="https://t.me/lilborsch" target="_blank" rel="noopener noreferrer" class="process-action">{{ content.processCta }}</a>
       </section>
 
       <section class="order-landing__section" id="cases">
@@ -133,6 +149,7 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useHead } from '@unhead/vue'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 import projects from '@/data/projects.json'
 import { articles } from '@/data/articles'
 import { LOCALES } from '@/types/environment'
@@ -184,12 +201,21 @@ const content = computed(() => {
         },
       ],
       processTitle: 'Как проходит работа',
+      processDisplayTitle: 'Как я делаю сайты',
+      processSubtitle: 'Инфографика процесса: прозрачные этапы, понятные сроки и измеримый результат на каждом шаге.',
+      processStats: [
+        { value: '5+', label: 'этапов под ключ' },
+        { value: '7–21', label: 'дней до MVP' },
+        { value: 'A+', label: 'фокус на качестве' },
+      ],
       process: [
         { title: 'Бриф и цели', text: 'Определяем продукт, аудиторию, оффер и KPI: заявки, звонки, продажи.' },
         { title: 'Прототип и дизайн', text: 'Собираем структуру экранами, делаем визуальную систему и тексты под конверсию.' },
         { title: 'Разработка и интеграции', text: 'Верстка, фронтенд/бекенд, формы, аналитика, CRM, уведомления и автоматика.' },
         { title: 'Запуск и рост', text: 'Релиз, проверка метрик, улучшения по данным и сопровождение после запуска.' },
       ],
+      processTags: ['UI-kit', 'CMS / forms', 'SEO-ready', 'Analytics', 'Support'],
+      processCta: 'Написать в Telegram',
       casesTitle: 'Кейсы по нишам: что можно сделать под ваш бизнес',
       caseFilters: [
         { id: 'all', title: 'Все ниши' },
@@ -291,12 +317,21 @@ const content = computed(() => {
       },
     ],
     processTitle: 'How the process works',
+    processDisplayTitle: 'How I Build Websites',
+    processSubtitle: 'Process infographic: transparent stages, clear timeline, and measurable outcomes at each step.',
+    processStats: [
+      { value: '5+', label: 'turnkey stages' },
+      { value: '7–21', label: 'days to MVP' },
+      { value: 'A+', label: 'quality focus' },
+    ],
     process: [
       { title: 'Brief and goals', text: 'Define product, audience, offer, and measurable KPIs: leads, calls, sales.' },
       { title: 'Prototype and design', text: 'Build screen structure, visual system, and conversion-oriented copy.' },
       { title: 'Development and integrations', text: 'Frontend/backend, forms, analytics, CRM, notifications, and automation.' },
       { title: 'Launch and growth', text: 'Release, metrics review, iterative improvements, and post-launch support.' },
     ],
+    processTags: ['UI-kit', 'CMS / forms', 'SEO-ready', 'Analytics', 'Support'],
+    processCta: 'Message on Telegram',
     casesTitle: 'Niche cases: what can be built for your business',
     caseFilters: [
       { id: 'all', title: 'All niches' },
@@ -438,6 +473,8 @@ useHead(() => {
   position relative
   color #e7edf5
   padding 38px 0 68px
+  overflow hidden
+  isolation isolate
 
   &::before
     content ''
@@ -445,8 +482,20 @@ useHead(() => {
     inset 0
     z-index 0
     pointer-events none
-    background linear-gradient(180deg, rgba(9, 12, 16, .82) 0%, rgba(10, 14, 19, .92) 100%), url('/images/projects/buildings.jpg') center / cover no-repeat
+    background radial-gradient(circle at 12% 18%, rgba(131, 255, 192, .12) 0%, rgba(131, 255, 192, 0) 42%), radial-gradient(circle at 88% 11%, rgba(94, 164, 255, .14) 0%, rgba(94, 164, 255, 0) 34%), radial-gradient(circle at 74% 84%, rgba(138, 119, 255, .08) 0%, rgba(138, 119, 255, 0) 40%), linear-gradient(180deg, #090c11 0%, #0b1118 45%, #0a0f15 100%)
+    animation bgShift 18s ease-in-out infinite alternate
+
+  &::after
+    content ''
+    position fixed
+    inset -25%
+    z-index 0
+    pointer-events none
     opacity .3
+    background-image linear-gradient(rgba(220, 255, 208, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(220, 255, 208, .06) 1px, transparent 1px)
+    background-size 46px 46px, 46px 46px
+    mask-image radial-gradient(circle at center, rgba(0, 0, 0, .95) 45%, rgba(0, 0, 0, 0) 82%)
+    animation patternDrift 32s linear infinite
 
   .wrap
     position relative
@@ -454,29 +503,100 @@ useHead(() => {
     display flex
     flex-direction column
     gap 18px
+    &::before
+      content ''
+      position absolute
+      inset 0
+      pointer-events none
+      border-radius 32px
+      z-index -1
+      background radial-gradient(circle at 20% 18%, rgba(220, 255, 208, .08) 0%, rgba(220, 255, 208, 0) 34%), radial-gradient(circle at 80% 88%, rgba(122, 161, 255, .08) 0%, rgba(122, 161, 255, 0) 38%)
 
   &__topnav
     display flex
-    flex-wrap wrap
-    gap 8px
+    justify-content space-between
+    gap 10px
     align-items center
+    flex-wrap wrap
+
+  &__topnav-links
+    display flex
+    gap 8px
+    flex-wrap wrap
+
     a
-      min-height 34px
-      padding 0 12px
+      position relative
+      min-height 36px
+      padding 0 14px
       border-radius 999px
-      border 1px solid rgba(126, 156, 189, .36)
-      background rgba(255, 255, 255, .03)
+      border 1px solid rgba(126, 156, 189, .34)
+      background linear-gradient(180deg, rgba(255, 255, 255, .06) 0%, rgba(255, 255, 255, .02) 100%)
       text-decoration none
-      color #e8f1fb
+      color #dbe8f6
       display inline-flex
       align-items center
       justify-content center
       font-size 14px
-      font-weight 600
-      transition .18s ease all
+      font-weight 700
+      letter-spacing .01em
+      transition border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease, background .2s ease
+      overflow hidden
+      backdrop-filter blur(4px)
+
+      &::after
+        content ''
+        position absolute
+        left 14px
+        right 14px
+        bottom 7px
+        height 2px
+        border-radius 999px
+        background linear-gradient(90deg, rgba(220, 255, 208, 0) 0%, rgba(220, 255, 208, .95) 50%, rgba(220, 255, 208, 0) 100%)
+        transform scaleX(.2)
+        opacity 0
+        transition transform .2s ease, opacity .2s ease
+
       &:hover
-        border-color rgba(220, 255, 208, .75)
-        color #fff
+        border-color rgba(220, 255, 208, .72)
+        color #f6fffb
+        transform translateY(-1px)
+        box-shadow 0 8px 20px rgba(0, 0, 0, .22), 0 0 0 1px rgba(220, 255, 208, .1) inset
+
+        &::after
+          transform scaleX(1)
+          opacity 1
+
+      &:focus-visible
+        outline none
+        border-color rgba(220, 255, 208, .92)
+        box-shadow 0 0 0 3px rgba(220, 255, 208, .2)
+
+      &.router-link-active,
+      &.router-link-exact-active
+        color #111
+        border-color #dcffd0
+        background #dcffd0
+        box-shadow 0 10px 24px rgba(220, 255, 208, .2)
+
+        &::after
+          opacity .4
+          transform scaleX(1)
+
+  &__topnav-lang
+    margin-left auto
+
+    :deep(.language-switcher)
+      background rgba(255, 255, 255, .03)
+      border 1px solid rgba(126, 156, 189, .36)
+      border-radius 999px
+      padding 0 8px
+
+    :deep(.language-switcher__button)
+      min-height 34px
+      color #e8f1fb
+
+    :deep(.language-switcher__menu)
+      border-radius 14px
 
   &__hero
     background linear-gradient(135deg, rgba(16, 21, 27, .94) 0%, rgba(10, 14, 18, .96) 100%)
@@ -561,6 +681,37 @@ useHead(() => {
     line-height 1.02
     color #eef5ff
 
+.order-landing__process
+  h2
+    text-transform uppercase
+    letter-spacing .18em
+    line-height .92
+
+.process-kpis
+  display grid
+  grid-template-columns repeat(3, minmax(0, 1fr))
+  gap 10px
+  margin-bottom 12px
+
+.process-kpi
+  background #dcffd0
+  color #101010
+  border-radius 16px
+  padding 14px
+
+  &__value
+    margin 0
+    font-size clamp(34px, 5.4vw, 56px)
+    line-height .9
+    font-weight 900
+
+  &__label
+    margin 6px 0 0
+    text-transform uppercase
+    letter-spacing .05em
+    font-size 13px
+    font-weight 700
+
 .order-landing__section-lead
   margin 0 0 12px
   color #cbd8e6
@@ -644,6 +795,25 @@ useHead(() => {
   p
     margin 0
     color #d0deeb
+
+.process-tags
+  margin-top 12px
+  display flex
+  flex-wrap wrap
+  gap 8px
+
+.process-action
+  margin-top 10px
+  width 100%
+  min-height 50px
+  border-radius 12px
+  text-decoration none
+  display inline-flex
+  align-items center
+  justify-content center
+  font-weight 800
+  background #dcffd0
+  color #111
 
 .cases-filters
   display flex
@@ -823,8 +993,23 @@ useHead(() => {
   100%
     background-position -20% 50%
 
+@keyframes bgShift
+  0%
+    transform translate3d(0, 0, 0) scale(1)
+    filter hue-rotate(0deg)
+  100%
+    transform translate3d(-1.5%, -1.8%, 0) scale(1.04)
+    filter hue-rotate(8deg)
+
+@keyframes patternDrift
+  0%
+    transform translate3d(0, 0, 0)
+  100%
+    transform translate3d(-78px, -46px, 0)
+
 @media screen and (max-width: 980px)
   .order-landing__proof,
+  .process-kpis,
   .benefits-grid,
   .cases-grid,
   .quiz-grid
@@ -844,6 +1029,9 @@ useHead(() => {
 
   .order-landing__hero h1
     letter-spacing 4px
+
+  .order-landing__process h2
+    letter-spacing .1em
 
   .process-line
     flex-wrap wrap
