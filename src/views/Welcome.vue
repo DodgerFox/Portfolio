@@ -39,9 +39,9 @@
                 <div class="welcome-stat__title">31</div>
                 <div class="welcome-stat__text">{{ $t('global.clients') }}</div>
               </div> -->
-              <button class="welcome-order-cta welcome-order-cta--card" @click="openOrderPanel">
+              <router-link to="/order-website" class="welcome-order-cta welcome-order-cta--card">
                 {{ orderCtaText }}
-              </button>
+              </router-link>
               <router-link to="/articles" class="welcome-block clickable">
                 <div class="welcome-stat__title">{{ articles.length }}</div>
                 <div class="welcome-stat__text">{{ $t('global.articles') }}</div>

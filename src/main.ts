@@ -65,6 +65,17 @@ export const createApp = ViteSSG(
                   datePublished: currentArticle.publishedAt,
                   image: currentArticle.image,
                 }
+            : to.name === 'order-website'
+              ? {
+                  '@type': 'ProfessionalService',
+                  name: 'Alexey Chernov Web Development',
+                  serviceType: locale === LOCALES.ru ? 'Создание сайтов под ключ' : 'Turnkey website development',
+                  areaServed: 'Worldwide',
+                  offers: {
+                    '@type': 'Offer',
+                    availability: 'https://schema.org/InStock',
+                  },
+                }
             : {
                 '@type': 'Person',
                 name: 'Alexey Chernov',
@@ -103,6 +114,6 @@ export const createApp = ViteSSG(
 
 export function includedRoutes(paths: string[]) {
   const articlePaths = articles.map((article) => `/articles/${article.slug}`)
-  const staticPaths = paths.filter((path) => path === '/' || path === '/projects' || path === '/articles')
+  const staticPaths = paths.filter((path) => path === '/' || path === '/projects' || path === '/articles' || path === '/order-website')
   return Array.from(new Set([...staticPaths, ...articlePaths]))
 }

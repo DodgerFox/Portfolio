@@ -47,6 +47,21 @@ export const routes: RouteRecordRaw[] = [
       },
     },
   },
+  {
+    path: '/order-website',
+    name: 'order-website',
+    component: () => import('../views/OrderWebsite.vue'),
+    meta: {
+      seo: {
+        title: 'Заказать сайт под ключ — Alexey Chernov',
+        description:
+          'Создание сайта под ключ: лендинги, корпоративные сайты и MVP. Дизайн, разработка, техническое SEO и запуск под заявки и продажи.',
+        keywords: ['заказать сайт', 'создание сайта', 'лендинг под ключ', 'разработка сайта', 'seo сайт', 'web development'],
+        image: '/images/avatar.webp',
+        type: 'website',
+      },
+    },
+  },
     {
       path: '/articles/:slug',
       name: 'article-detail',
