@@ -153,18 +153,24 @@ import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 import projects from '@/data/projects.json'
 import { articles } from '@/data/articles'
 import { LOCALES } from '@/types/environment'
+import { useAdminCms } from '@/utils/admin-cms'
 
 const { locale } = useI18n()
 const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
 const selectedCaseFilter = ref('all')
 const quizAnswers = ref<Record<string, string>>({})
+const { textSettings } = useAdminCms()
 
 const content = computed(() => {
   if (currentLocale.value === LOCALES.ru) {
     return {
       badge: 'Лендинг / корпоративный сайт / MVP',
-      title: 'Создание сайтов под заявки и продажи: дизайн, разработка, SEO и запуск под ключ',
-      lead: 'Делаю сайты, которые быстро загружаются, хорошо индексируются и ведут клиента к целевому действию. От брифа и структуры до запуска и поддержки.',
+      title:
+        textSettings.value.orderLanding.title.ru ||
+        'Создание сайтов под заявки и продажи: дизайн, разработка, SEO и запуск под ключ',
+      lead:
+        textSettings.value.orderLanding.lead.ru ||
+        'Делаю сайты, которые быстро загружаются, хорошо индексируются и ведут клиента к целевому действию. От брифа и структуры до запуска и поддержки.',
       primaryCta: 'Заказать сайт в Telegram',
       secondaryCta: 'Написать в WhatsApp',
       proofCards: [
@@ -272,15 +278,21 @@ const content = computed(() => {
         { q: 'Вы делаете SEO сразу?', a: 'Да, техническое SEO закладывается в разработку: структура, мета-теги, микроразметка, скорость и индексируемость.' },
         { q: 'Что после запуска?', a: 'Даю поддержку: мониторинг, правки, развитие контента и улучшение конверсии на основе аналитики.' },
       ],
-      finalTitle: 'Готов обсудить ваш проект сегодня',
-      finalLead: 'Напишите задачу, нишу и пример сайта, который нравится — предложу структуру, сроки и бюджетный коридор.',
+      finalTitle: textSettings.value.orderLanding.finalTitle.ru || 'Готов обсудить ваш проект сегодня',
+      finalLead:
+        textSettings.value.orderLanding.finalLead.ru ||
+        'Напишите задачу, нишу и пример сайта, который нравится — предложу структуру, сроки и бюджетный коридор.',
     }
   }
 
   return {
     badge: 'Landing page / corporate site / MVP',
-    title: 'Website development focused on leads and sales: design, engineering, SEO, and launch',
-    lead: 'I build websites that load fast, rank better, and guide visitors toward conversion. From discovery and structure to launch and support.',
+    title:
+      textSettings.value.orderLanding.title.en ||
+      'Website development focused on leads and sales: design, engineering, SEO, and launch',
+    lead:
+      textSettings.value.orderLanding.lead.en ||
+      'I build websites that load fast, rank better, and guide visitors toward conversion. From discovery and structure to launch and support.',
     primaryCta: 'Order website via Telegram',
     secondaryCta: 'Message on WhatsApp',
     proofCards: [
@@ -388,8 +400,10 @@ const content = computed(() => {
       { q: 'Do you include SEO from the start?', a: 'Yes, technical SEO is embedded into architecture: metadata, structured data, speed, and indexability.' },
       { q: 'What happens after launch?', a: 'I provide support: monitoring, iterations, content growth, and conversion improvements based on analytics.' },
     ],
-    finalTitle: 'Let’s discuss your project today',
-    finalLead: 'Send your niche, task, and an example site you like — I’ll propose structure, timeline, and budget range.',
+    finalTitle: textSettings.value.orderLanding.finalTitle.en || 'Let’s discuss your project today',
+    finalLead:
+      textSettings.value.orderLanding.finalLead.en ||
+      'Send your niche, task, and an example site you like — I’ll propose structure, timeline, and budget range.',
   }
 })
 

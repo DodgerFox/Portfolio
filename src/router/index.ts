@@ -62,6 +62,20 @@ export const routes: RouteRecordRaw[] = [
       },
     },
   },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/AdminPanel.vue'),
+    meta: {
+      seo: {
+        title: 'Admin — Alexey Chernov Portfolio',
+        description: 'Admin panel for managing portfolio content.',
+        keywords: ['admin', 'content management', 'portfolio'],
+        image: '/android-chrome-512x512.png',
+        type: 'website',
+      },
+    },
+  },
     {
       path: '/articles/:slug',
       name: 'article-detail',

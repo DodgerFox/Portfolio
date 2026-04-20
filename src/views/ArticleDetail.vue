@@ -80,17 +80,20 @@ import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useHead } from '@unhead/vue'
-import { articles, getArticleBySlug } from '@/data/articles'
+import { articles } from '@/data/articles'
 import { LOCALES } from '@/types/environment'
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
+import { useAdminCms } from '@/utils/admin-cms'
 
 const route = useRoute()
 const { locale } = useI18n()
 const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
 const copied = ref(false)
+const { viewArticles } = useAdminCms()
+const allArticles = computed(() => [...viewArticles.value, ...articles])
 
-const article = computed(() => getArticleBySlug(String(route.params.slug || '')))
-const relatedArticles = computed(() => articles.filter((item) => item.slug !== article.value?.slug).slice(0, 3))
+const article = computed(() => allArticles.value.find((item) => item.slug === String(route.params.slug || '')))
+const relatedArticles = computed(() => allArticles.value.filter((item) => item.slug !== article.value?.slug).slice(0, 3))
 
 // locale switching is handled by LanguageSwitcher component
 

@@ -26,12 +26,15 @@ import tags from '@/data/tags.json'
 import projects from '@/data/projects.json'
 import Tags from '@/components/blocks/Tags.vue'
 import Card from '@/components/ui/Card.vue'
+import { useAdminCms } from '@/utils/admin-cms'
 
 const activeTags = ref([])
+const { viewProjects } = useAdminCms()
+const allProjects = computed(() => [...viewProjects.value, ...projects])
 
 const filteredCards = computed(() => {
-  if (!activeTags.value?.length) return projects
-  return projects.filter((project) =>
+  if (!activeTags.value?.length) return allProjects.value
+  return allProjects.value.filter((project) =>
     project?.tags.find((tag) => activeTags.value.find((activeTag: { id: number }) => tag.id === activeTag.id)),
   )
 })

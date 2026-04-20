@@ -22,8 +22,8 @@
               <img :src="avatarSrc" alt="Alexey Chernov avatar" @error="onAvatarError" />
             </div>
             <div class="welcome-content" v-if="!aboutIsOpen">
-              <h2 class="welcome-content__title">{{ $t('welcome.hi') }}</h2>
-              <h3 class="welcome-content__text">{{ $t('welcome.occupation') }}</h3>
+              <h2 class="welcome-content__title">{{ welcomeHi }}</h2>
+              <h3 class="welcome-content__text">{{ welcomeOccupation }}</h3>
             </div>
 
             <div class="welcome-about" v-else v-html="story[currentLocale]"></div>
@@ -32,7 +32,7 @@
             <h1 class="welcome-title">{{ $t('welcome.portfolio') }}</h1>
             <div class="welcome-blocks">
               <router-link to="projects" class="welcome-block clickable">
-                <div class="welcome-stat__title">{{ projects.length }}</div>
+                <div class="welcome-stat__title">{{ allProjects.length }}</div>
                 <div class="welcome-stat__text">{{ $t('global.projects') }}</div>
               </router-link>
               <!-- <div class="welcome-block clickable" @click="later">
@@ -43,7 +43,7 @@
                 {{ orderCtaText }}
               </router-link>
               <router-link to="/articles" class="welcome-block clickable">
-                <div class="welcome-stat__title">{{ articles.length }}</div>
+                <div class="welcome-stat__title">{{ allArticles.length }}</div>
                 <div class="welcome-stat__text">{{ $t('global.articles') }}</div>
               </router-link>
               <div class="welcome-block socials">
@@ -118,6 +118,7 @@ import { articles } from '@/data/articles'
 import story from '@/data/story.json'
 import { NotificationsStore } from '@/stores/notifications'
 import { LOCALES } from '@/types/environment.ts'
+import { useAdminCms } from '@/utils/admin-cms'
 const { locale, t } = useI18n()
 
 const notificationsStore = NotificationsStore()
@@ -125,11 +126,25 @@ const notificationsStore = NotificationsStore()
 const aboutIsOpen = ref(false)
 const orderPanelOpen = ref(false)
 const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
-const orderCtaText = computed(() => (currentLocale.value === LOCALES.ru ? 'Заказать\nсайт' : 'Order\nwebsite'))
+const { textSettings, viewProjects, viewArticles } = useAdminCms()
+const allProjects = computed(() => [...viewProjects.value, ...projects])
+const allArticles = computed(() => [...viewArticles.value, ...articles])
+const welcomeHi = computed(() => (currentLocale.value === LOCALES.ru ? textSettings.value.welcome.hi.ru || t('welcome.hi') : textSettings.value.welcome.hi.en || t('welcome.hi')))
+const welcomeOccupation = computed(() =>
+  currentLocale.value === LOCALES.ru
+    ? textSettings.value.welcome.occupation.ru || t('welcome.occupation')
+    : textSettings.value.welcome.occupation.en || t('welcome.occupation'),
+)
+const orderCtaText = computed(() => {
+  if (currentLocale.value === LOCALES.ru) return textSettings.value.welcome.orderCta.ru || 'Заказать\nсайт'
+  return textSettings.value.welcome.orderCta.en || 'Order\nwebsite'
+})
 const orderInfo = computed(() => {
   if (currentLocale.value === LOCALES.ru) {
     return {
-      subtitle: 'Инфографика процесса: прозрачные этапы, фиксируем сроки и даю понятный результат на каждом шаге.',
+      subtitle:
+        textSettings.value.welcome.orderSubtitle.ru ||
+        'Инфографика процесса: прозрачные этапы, фиксируем сроки и даю понятный результат на каждом шаге.',
       stats: [
         { value: '5+', label: 'этапов под ключ' },
         { value: '7–21', label: 'дней на MVP' },
@@ -147,7 +162,9 @@ const orderInfo = computed(() => {
   }
 
   return {
-    subtitle: 'Process infographic: transparent stages, clear timeline, and measurable outcomes at each step.',
+    subtitle:
+      textSettings.value.welcome.orderSubtitle.en ||
+      'Process infographic: transparent stages, clear timeline, and measurable outcomes at each step.',
     stats: [
       { value: '5+', label: 'turnkey stages' },
       { value: '7–21', label: 'days to MVP' },

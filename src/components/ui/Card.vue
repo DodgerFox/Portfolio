@@ -4,7 +4,7 @@
     class="card"
     :class="[card?.options, { noImage: !card.image, lightText: isDark }]"
     :href="card.link || undefined"
-    :style="card.image ? { backgroundImage: `url('/images/projects/${card.image}')` } : undefined"
+  :style="card.image ? { backgroundImage: `url('${imageSrc}')` } : undefined"
     :target="card.link ? '_blank' : undefined"
   >
     <div class="card-content">
@@ -23,7 +23,7 @@
     <img
       v-if="card.image"
       class="card-seo-img"
-      :src="`/images/projects/${card.image}`"
+      :src="imageSrc"
       :alt="card.title || card.description || 'Project image'"
       loading="lazy"
     />
@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 
 const { locale } = useI18n()
 const props = defineProps<{
@@ -40,6 +40,12 @@ const props = defineProps<{
 }>()
 
 const isDark = ref(false)
+const imageSrc = computed(() => {
+  const image = props?.card?.image || ''
+  if (!image) return ''
+  if (image.startsWith('http://') || image.startsWith('https://') || image.startsWith('/')) return image
+  return `/images/projects/${image}`
+})
 
 function analyzeImageBrightness(src: string) {
   if (!src) return
@@ -84,17 +90,14 @@ function analyzeImageBrightness(src: string) {
 
 onMounted(() => {
   if (typeof window === 'undefined') return
-  if (props?.card?.image) {
-    // images are served from /images/projects/
-    analyzeImageBrightness(`/images/projects/${props.card.image}`)
-  }
+  if (imageSrc.value) analyzeImageBrightness(imageSrc.value)
 })
 
 // watch for changes to card.image (if cards are dynamic)
 watch(
-  () => (props as any).card?.image,
+  () => imageSrc.value,
   (val) => {
-    if (val) analyzeImageBrightness(`/images/projects/${val}`)
+    if (val) analyzeImageBrightness(val)
   },
 )
 </script>

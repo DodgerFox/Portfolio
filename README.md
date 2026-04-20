@@ -48,3 +48,19 @@ VITE_SITE_URL=https://your-domain.tld
 ```
 
 - Root crawler files are in `public/robots.txt` and `public/sitemap.xml`.
+
+- `sitemap.xml` is generated automatically after `pnpm build-only` by scanning prerendered HTML in `dist/` and adding `<lastmod>` for each URL.
+- You can run sitemap generation manually:
+
+```sh
+pnpm sitemap
+```
+
+## Admin panel (content editor)
+
+- Admin UI is available at `/admin`.
+- You can:
+	- add/edit/remove custom projects,
+	- add/edit/remove custom articles,
+	- edit key text blocks for homepage and `/order-website` landing.
+- Data is stored in browser `localStorage` (client-side only, per browser/device).

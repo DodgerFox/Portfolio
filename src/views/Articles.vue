@@ -41,9 +41,12 @@ import { articles } from '@/data/articles'
 import { LOCALES } from '@/types/environment'
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 import { ref } from 'vue'
+import { useAdminCms } from '@/utils/admin-cms'
 
 const { locale } = useI18n()
 const currentLocale = computed(() => (locale.value as LOCALES) || LOCALES.en)
+const { viewArticles } = useAdminCms()
+const allArticles = computed(() => [...viewArticles.value, ...articles])
 
 const selectedTag = ref<string | 'all'>('all')
 
@@ -53,13 +56,13 @@ function selectTag(tag: string | 'all') {
 
 const uniqueTags = computed(() => {
   const map = new Map<string, any>()
-  articles.forEach((a) => a.tags.forEach((t) => map.set(t.id, t)))
+  allArticles.value.forEach((a) => a.tags.forEach((t) => map.set(t.id, t)))
   return Array.from(map.values())
 })
 
 const filteredArticles = computed(() => {
-  if (selectedTag.value === 'all') return articles
-  return articles.filter((a) => a.tags.some((t) => t.id === selectedTag.value))
+  if (selectedTag.value === 'all') return allArticles.value
+  return allArticles.value.filter((a) => a.tags.some((t) => t.id === selectedTag.value))
 })
 
 useHead({
