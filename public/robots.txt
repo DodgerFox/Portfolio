@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Main sitemap (for better discovery)
-Sitemap: /sitemap.xml
+Sitemap: https://alexey-chernov.netlify.app/sitemap.xml

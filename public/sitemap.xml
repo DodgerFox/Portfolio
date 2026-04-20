@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/</loc>
+    <loc>https://alexey-chernov.netlify.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>/projects</loc>
+    <loc>https://alexey-chernov.netlify.app/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>/articles</loc>
+    <loc>https://alexey-chernov.netlify.app/articles</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/order-website</loc>
+    <loc>https://alexey-chernov.netlify.app/order-website</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-  <url><loc>/articles/html5-semantic-layouts</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/css3-system-architecture</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/javascript-production-patterns</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/typescript-domain-modeling</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/vue3-composable-architecture</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/nuxt3-ssr-and-isr</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/pinia-state-management</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/vue-router-navigation-strategy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/vite-build-optimization</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/nodejs-api-backend</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/express-rest-api-patterns</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/sequelize-data-modeling</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/mysql-query-design</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/socketio-realtime-features</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/docker-production-images</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/docker-compose-multi-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/nginx-routing-and-cache</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/gitlab-cicd-pipelines</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/openlayers-mapbox-leaflet</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/articles/threejs-potree-3d-visualization</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/html5-semantic-layouts</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/css3-system-architecture</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/javascript-production-patterns</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/typescript-domain-modeling</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/vue3-composable-architecture</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/nuxt3-ssr-and-isr</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/pinia-state-management</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/vue-router-navigation-strategy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/vite-build-optimization</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/nodejs-api-backend</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/express-rest-api-patterns</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/sequelize-data-modeling</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/mysql-query-design</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/socketio-realtime-features</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/docker-production-images</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/docker-compose-multi-service</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/nginx-routing-and-cache</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/gitlab-cicd-pipelines</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/openlayers-mapbox-leaflet</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alexey-chernov.netlify.app/articles/threejs-potree-3d-visualization</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
