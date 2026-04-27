@@ -1,6 +1,83 @@
 <template>
   <section class="admin">
     <div class="wrap">
+      <section class="admin-card admin-auth" v-if="!passwordVerified">
+        <h2>Шаг 1: пароль</h2>
+        <p>Введите пароль администратора, затем подтвердите вход через TOTP.</p>
+
+        <form class="admin-form" @submit.prevent="loginWithPassword">
+          <input
+            v-model="passwordInput"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Пароль администратора"
+            :disabled="isPasswordLocked || !hasPasswordConfig"
+            required
+          />
+          <div class="admin-form__actions">
+            <button type="submit" :disabled="isPasswordLocked || !hasPasswordConfig">Продолжить</button>
+          </div>
+        </form>
+
+        <p v-if="!hasPasswordConfig" class="admin-error">
+          Не настроены VITE_ADMIN_PASSWORD_HASH и VITE_ADMIN_PASSWORD_SALT. Доступ к админке отключён.
+        </p>
+        <p v-else-if="isPasswordLocked" class="admin-error">
+          Слишком много попыток пароля. Повтори через {{ passwordLockLeftSeconds }} сек.
+        </p>
+        <p v-else-if="passwordError" class="admin-error">{{ passwordError }}</p>
+      </section>
+
+      <section class="admin-card admin-auth" v-else-if="isSetupMode">
+        <h2>Настройка TOTP</h2>
+        <p>
+          Сканируй ключ в Google Authenticator / 1Password / Authy, затем введи 6-значный код для активации админки.
+        </p>
+
+        <div class="admin-auth__secret">{{ pendingSecret }}</div>
+        <a class="admin-auth__uri" :href="setupUri">otpauth link</a>
+
+        <form class="admin-form" @submit.prevent="confirmSetup">
+          <input
+            v-model.trim="setupCode"
+            inputmode="numeric"
+            autocomplete="one-time-code"
+            maxlength="6"
+            placeholder="Код из приложения (6 цифр)"
+            required
+          />
+          <div class="admin-form__actions">
+            <button type="submit">Подтвердить и войти</button>
+            <button type="button" class="ghost" @click="regenerateSecret">Сгенерировать новый ключ</button>
+          </div>
+        </form>
+        <p v-if="authError" class="admin-error">{{ authError }}</p>
+      </section>
+
+      <section class="admin-card admin-auth" v-else-if="!isUnlocked">
+        <h2>Вход в админку (TOTP)</h2>
+        <p>Введи одноразовый 6-значный код из приложения-аутентификатора.</p>
+
+        <form class="admin-form" @submit.prevent="loginWithTotp">
+          <input
+            v-model.trim="loginCode"
+            inputmode="numeric"
+            autocomplete="one-time-code"
+            maxlength="6"
+            placeholder="000000"
+            :disabled="isLocked"
+            required
+          />
+          <div class="admin-form__actions">
+            <button type="submit" :disabled="isLocked">Войти</button>
+          </div>
+        </form>
+
+        <p v-if="isLocked" class="admin-error">Слишком много попыток. Повтори через {{ lockLeftSeconds }} сек.</p>
+        <p v-else-if="authError" class="admin-error">{{ authError }}</p>
+      </section>
+
+      <template v-else>
       <header class="admin__head">
         <h1>Admin panel</h1>
         <div class="admin__links">
@@ -8,6 +85,7 @@
           <router-link to="/projects">Проекты</router-link>
           <router-link to="/articles">Статьи</router-link>
           <router-link to="/order-website">Лендинг</router-link>
+          <button type="button" class="ghost" @click="logout">Выйти</button>
         </div>
       </header>
 
@@ -158,14 +236,17 @@
         <p>Удаляет все пользовательские проекты, статьи и тексты из localStorage.</p>
         <button type="button" class="danger" @click="handleReset">Сбросить всё</button>
       </section>
+      </template>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useAdminCms, type AdminTextSettings } from '@/utils/admin-cms'
+import { buildOtpAuthUri, generateBase32Secret, verifyTotpCode } from '@/utils/totp'
+import { constantTimeEqual, hashPasswordPbkdf2 } from '@/utils/password-auth'
 
 const {
   tags,
@@ -179,6 +260,55 @@ const {
   saveTextSettings,
   resetAll,
 } = useAdminCms()
+
+const TOTP_SECRET_KEY = 'portfolio.admin.totp.secret.v1'
+const TOTP_SESSION_KEY = 'portfolio.admin.totp.session.v1'
+const TOTP_FAILS_KEY = 'portfolio.admin.totp.fails.v1'
+const TOTP_LOCK_UNTIL_KEY = 'portfolio.admin.totp.lock-until.v1'
+const PASSWORD_FAILS_KEY = 'portfolio.admin.password.fails.v1'
+const PASSWORD_LOCK_UNTIL_KEY = 'portfolio.admin.password.lock-until.v1'
+
+const PASSWORD_HASH = String(import.meta.env.VITE_ADMIN_PASSWORD_HASH || '').trim().toLowerCase()
+const PASSWORD_SALT = String(import.meta.env.VITE_ADMIN_PASSWORD_SALT || '').trim()
+const PASSWORD_ITERATIONS = Number(import.meta.env.VITE_ADMIN_PASSWORD_ITERATIONS || 210000)
+
+const SESSION_MS = 15 * 60 * 1000
+const MAX_FAILS = 5
+const LOCK_MS = 5 * 60 * 1000
+
+const passwordInput = ref('')
+const passwordVerified = ref(false)
+const passwordError = ref('')
+const passwordLockUntil = ref(0)
+
+const pendingSecret = ref('')
+const setupCode = ref('')
+const loginCode = ref('')
+const isUnlocked = ref(false)
+const authError = ref('')
+const lockUntil = ref(0)
+const lockNow = ref(Date.now())
+let lockTicker: number | null = null
+
+const setupUri = computed(() =>
+  buildOtpAuthUri({
+    secret: pendingSecret.value,
+    accountName: 'admin@alexey-chernov.netlify.app',
+    issuer: 'Alexey Chernov Portfolio',
+  }),
+)
+
+const hasPasswordConfig = computed(() => Boolean(PASSWORD_HASH && PASSWORD_SALT))
+const isPasswordLocked = computed(() => passwordLockUntil.value > lockNow.value)
+const passwordLockLeftSeconds = computed(() => Math.max(0, Math.ceil((passwordLockUntil.value - lockNow.value) / 1000)))
+
+const isSetupMode = computed(() => {
+  if (typeof window === 'undefined') return false
+  return !window.localStorage.getItem(TOTP_SECRET_KEY)
+})
+
+const isLocked = computed(() => lockUntil.value > lockNow.value)
+const lockLeftSeconds = computed(() => Math.max(0, Math.ceil((lockUntil.value - lockNow.value) / 1000)))
 
 const tab = ref<'projects' | 'articles' | 'texts'>('projects')
 
@@ -310,6 +440,173 @@ function handleReset() {
   Object.assign(textsForm, JSON.parse(JSON.stringify(textSettings.value)))
 }
 
+function readNumber(key: string, fallback = 0) {
+  if (typeof window === 'undefined') return fallback
+  const raw = window.localStorage.getItem(key)
+  const value = Number(raw)
+  return Number.isFinite(value) ? value : fallback
+}
+
+function setSession() {
+  if (typeof window === 'undefined') return
+  window.localStorage.setItem(TOTP_SESSION_KEY, String(Date.now() + SESSION_MS))
+  window.localStorage.setItem(TOTP_FAILS_KEY, '0')
+  window.localStorage.removeItem(TOTP_LOCK_UNTIL_KEY)
+  lockUntil.value = 0
+  isUnlocked.value = true
+  authError.value = ''
+}
+
+function logout() {
+  if (typeof window === 'undefined') return
+  window.localStorage.removeItem(TOTP_SESSION_KEY)
+  isUnlocked.value = false
+  passwordVerified.value = false
+  loginCode.value = ''
+  passwordInput.value = ''
+}
+
+async function loginWithPassword() {
+  passwordError.value = ''
+
+  if (!hasPasswordConfig.value) {
+    passwordError.value = 'Пароль не настроен в окружении.'
+    return
+  }
+
+  if (isPasswordLocked.value) return
+
+  const value = passwordInput.value || ''
+  if (value.length < 8) {
+    passwordError.value = 'Слишком короткий пароль.'
+    return
+  }
+
+  const derived = await hashPasswordPbkdf2({
+    password: value,
+    salt: PASSWORD_SALT,
+    iterations: PASSWORD_ITERATIONS,
+    keyLength: 32,
+  })
+
+  if (constantTimeEqual(derived, PASSWORD_HASH)) {
+    passwordVerified.value = true
+    passwordInput.value = ''
+    passwordError.value = ''
+    window.localStorage.setItem(PASSWORD_FAILS_KEY, '0')
+    window.localStorage.removeItem(PASSWORD_LOCK_UNTIL_KEY)
+    passwordLockUntil.value = 0
+    return
+  }
+
+  const fails = readNumber(PASSWORD_FAILS_KEY, 0) + 1
+  window.localStorage.setItem(PASSWORD_FAILS_KEY, String(fails))
+
+  if (fails >= MAX_FAILS) {
+    const until = Date.now() + LOCK_MS
+    window.localStorage.setItem(PASSWORD_LOCK_UNTIL_KEY, String(until))
+    window.localStorage.setItem(PASSWORD_FAILS_KEY, '0')
+    passwordLockUntil.value = until
+    passwordError.value = 'Лимит попыток пароля превышен.'
+    return
+  }
+
+  passwordError.value = `Неверный пароль. Осталось попыток: ${MAX_FAILS - fails}.`
+}
+
+function regenerateSecret() {
+  pendingSecret.value = generateBase32Secret(32)
+  setupCode.value = ''
+  authError.value = ''
+}
+
+async function confirmSetup() {
+  authError.value = ''
+  const code = setupCode.value.replace(/\D/g, '')
+
+  if (code.length !== 6) {
+    authError.value = 'Код должен содержать 6 цифр.'
+    return
+  }
+
+  const valid = await verifyTotpCode(pendingSecret.value, code, { window: 1 })
+  if (!valid) {
+    authError.value = 'Неверный код. Проверь время на устройстве и попробуй снова.'
+    return
+  }
+
+  window.localStorage.setItem(TOTP_SECRET_KEY, pendingSecret.value)
+  setSession()
+}
+
+async function loginWithTotp() {
+  authError.value = ''
+  if (isLocked.value) return
+
+  if (typeof window === 'undefined') return
+  const secret = window.localStorage.getItem(TOTP_SECRET_KEY)
+  if (!secret) {
+    authError.value = 'TOTP не настроен. Сначала пройди первичную настройку.'
+    return
+  }
+
+  const code = loginCode.value.replace(/\D/g, '')
+  if (code.length !== 6) {
+    authError.value = 'Код должен содержать 6 цифр.'
+    return
+  }
+
+  const valid = await verifyTotpCode(secret, code, { window: 1 })
+  if (valid) {
+    setSession()
+    loginCode.value = ''
+    return
+  }
+
+  const fails = readNumber(TOTP_FAILS_KEY, 0) + 1
+  window.localStorage.setItem(TOTP_FAILS_KEY, String(fails))
+
+  if (fails >= MAX_FAILS) {
+    const until = Date.now() + LOCK_MS
+    window.localStorage.setItem(TOTP_LOCK_UNTIL_KEY, String(until))
+    window.localStorage.setItem(TOTP_FAILS_KEY, '0')
+    lockUntil.value = until
+    authError.value = 'Лимит попыток превышен.'
+    return
+  }
+
+  authError.value = `Неверный код. Осталось попыток: ${MAX_FAILS - fails}.`
+}
+
+onMounted(() => {
+  if (typeof window === 'undefined') return
+
+  passwordLockUntil.value = readNumber(PASSWORD_LOCK_UNTIL_KEY, 0)
+  lockUntil.value = readNumber(TOTP_LOCK_UNTIL_KEY, 0)
+  const expiresAt = readNumber(TOTP_SESSION_KEY, 0)
+  isUnlocked.value = Boolean(expiresAt && expiresAt > Date.now())
+
+  if (!window.localStorage.getItem(TOTP_SECRET_KEY)) {
+    pendingSecret.value = generateBase32Secret(32)
+  }
+
+  lockTicker = window.setInterval(() => {
+    lockNow.value = Date.now()
+
+    const exp = readNumber(TOTP_SESSION_KEY, 0)
+    if (isUnlocked.value && exp && exp <= Date.now()) {
+      logout()
+    }
+
+    passwordLockUntil.value = readNumber(PASSWORD_LOCK_UNTIL_KEY, 0)
+    lockUntil.value = readNumber(TOTP_LOCK_UNTIL_KEY, 0)
+  }, 1000)
+})
+
+onBeforeUnmount(() => {
+  if (lockTicker) window.clearInterval(lockTicker)
+})
+
 useHead({
   title: 'Admin — Portfolio',
   meta: [{ name: 'robots', content: 'noindex, nofollow' }],
@@ -391,6 +688,29 @@ useHead({
 
   &--danger
     border-color rgba(255, 98, 98, .4)
+
+.admin-auth
+  max-width 760px
+
+  &__secret
+    font-family ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace
+    background #0a1017
+    border 1px solid #2f4560
+    border-radius 12px
+    padding 10px 12px
+    letter-spacing .06em
+    word-break break-all
+
+  &__uri
+    color #aad4ff
+    text-decoration none
+    max-width 100%
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+
+.admin-error
+  color #ff8f8f
 
 .admin-form
   display flex
