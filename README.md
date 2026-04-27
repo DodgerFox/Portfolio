@@ -59,8 +59,25 @@ pnpm sitemap
 ## Admin panel (content editor)
 
 - Admin UI is available at `/admin`.
+- Access is protected by 2 steps: password (PBKDF2 hash from env) + TOTP.
 - You can:
 	- add/edit/remove custom projects,
 	- add/edit/remove custom articles,
 	- edit key text blocks for homepage and `/order-website` landing.
 - Data is stored in browser `localStorage` (client-side only, per browser/device).
+
+### Configure admin password
+
+Generate hash and salt:
+
+```sh
+pnpm admin:password-hash "your-strong-password"
+```
+
+Then set values in your environment:
+
+```sh
+VITE_ADMIN_PASSWORD_SALT=...
+VITE_ADMIN_PASSWORD_HASH=...
+VITE_ADMIN_PASSWORD_ITERATIONS=210000
+```

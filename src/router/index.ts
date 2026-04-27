@@ -12,7 +12,7 @@ export const routes: RouteRecordRaw[] = [
         description:
           'Designer & Full-Stack developer portfolio: real web projects, UI/UX approach, and contacts for collaboration.',
         keywords: ['portfolio', 'frontend developer', 'full-stack', 'web design', 'vue', 'typescript', 'Алексей Чернов'],
-        image: '/images/avatar.webp',
+        image: '/images/avatar.jpeg',
         type: 'website',
       },
     },
@@ -57,7 +57,7 @@ export const routes: RouteRecordRaw[] = [
         description:
           'Создание сайта под ключ: лендинги, корпоративные сайты и MVP. Дизайн, разработка, техническое SEO и запуск под заявки и продажи.',
         keywords: ['заказать сайт', 'создание сайта', 'лендинг под ключ', 'разработка сайта', 'seo сайт', 'web development'],
-        image: '/images/avatar.webp',
+        image: '/images/avatar.jpeg',
         type: 'website',
       },
     },

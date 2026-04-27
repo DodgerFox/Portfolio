@@ -184,7 +184,7 @@ const avatarSrc = ref('/images/avatar-latest.jpg')
 
 function onAvatarError(event: Event) {
   const target = event.target as HTMLImageElement
-  target.src = '/images/avatar.webp'
+  target.src = '/images/avatar.jpeg'
 }
 
 useHead({

@@ -87,8 +87,8 @@
             <p class="case-card__offer">{{ item.offer }}</p>
             <div class="case-card__meta">
               <span>{{ item.timeline }}</span>
-              <span>{{ item.budget }}</span>
             </div>
+            <a class="case-card__cta" :href="item.cta" target="_blank" rel="noopener noreferrer">{{ content.caseCta }}</a>
           </article>
         </div>
       </section>
@@ -176,7 +176,7 @@ const content = computed(() => {
       proofCards: [
         { value: `${projects.length}+`, label: 'проектов в портфолио' },
         { value: '11+', label: 'лет коммерческой разработки' },
-        { value: 'Highload', label: 'опыт сложных сервисов' },
+        { value: 'Highload', label: 'разработка любой сложности' },
         { value: `${articles.length}`, label: 'экспертных материалов' },
       ],
       benefitsTitle: 'Плюсы заказа сайта у меня',
@@ -232,17 +232,18 @@ const content = computed(() => {
         { id: 'fintech', title: 'FinTech' },
         { id: 'industrial', title: 'Промышленность' },
       ],
+      caseCta: 'Узнать стоимость',
       cases: [
-        { filter: 'services', nicheTitle: 'Юридические и экспертные услуги', title: 'Лендинг на заявки', offer: 'УТП + квиз + форма в 2 клика, интеграция с CRM.', timeline: '10–14 дней', budget: 'от 90 000 ₽' },
-        { filter: 'ecom', nicheTitle: 'Интернет-магазин', title: 'Каталог + карточка + оплата', offer: 'Оптимизация каталога, быстрый фильтр, SEO-структура разделов.', timeline: '21–35 дней', budget: 'от 180 000 ₽' },
-        { filter: 'b2b', nicheTitle: 'Корпоративный сайт', title: 'Имидж + лидогенерация', offer: 'Структура под доверие: кейсы, услуги, экспертиза, лид-магниты.', timeline: '14–28 дней', budget: 'от 140 000 ₽' },
-        { filter: 'media', nicheTitle: 'Медиа / блог / журнал', title: 'Контент-платформа', offer: 'Таксономия материалов, шаблоны статей, выдача и перелинковка.', timeline: '18–30 дней', budget: 'от 160 000 ₽' },
-        { filter: 'fintech', nicheTitle: 'FinTech / трейдинг', title: 'Личный кабинет и дашборды', offer: 'Реалтайм-данные, роли доступа, отчеты и безопасный поток данных.', timeline: '30–60 дней', budget: 'от 280 000 ₽' },
-        { filter: 'industrial', nicheTitle: 'Промышленные компании', title: 'Корпоративный highload-портал', offer: 'Многоуровневая структура, интеграции, каталоги и административные панели.', timeline: '30–55 дней', budget: 'от 260 000 ₽' },
-        { filter: 'services', nicheTitle: 'Агентства и студии', title: 'Мульти-лендинг под услуги', offer: 'Отдельные страницы под сегменты + сквозная аналитика конверсий.', timeline: '14–24 дней', budget: 'от 130 000 ₽' },
-        { filter: 'ecom', nicheTitle: 'D2C бренды', title: 'Витрина + контент-маркетинг', offer: 'Комбо e-commerce и блоговой структуры для SEO и повторных продаж.', timeline: '24–40 дней', budget: 'от 220 000 ₽' },
-        { filter: 'b2b', nicheTitle: 'IT / SaaS', title: 'Сайт продукта + onboarding', offer: 'Оффер, pricing, FAQ, demo-форма и воронка пробного доступа.', timeline: '16–30 дней', budget: 'от 170 000 ₽' },
-        { filter: 'media', nicheTitle: 'Образовательные проекты', title: 'Журнал + воронка обучения', offer: 'Секции материалов, фильтры, подписка и лид-магнит через квиз.', timeline: '18–35 дней', budget: 'от 180 000 ₽' },
+        { filter: 'services', nicheTitle: 'Юридические и экспертные услуги', title: 'Лендинг на заявки', offer: 'УТП + квиз + форма в 2 клика, интеграция с CRM.', timeline: '10–14 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%9B%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B8' },
+        { filter: 'ecom', nicheTitle: 'Интернет-магазин', title: 'Каталог + карточка + оплата', offer: 'Оптимизация каталога, быстрый фильтр, SEO-структура разделов.', timeline: '21–35 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%2B%20%D0%BA%D0%B0%D1%80%D1%82%D0%BE%D1%87%D0%BA%D0%B0%20%2B%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0' },
+        { filter: 'b2b', nicheTitle: 'Корпоративный сайт', title: 'Имидж + лидогенерация', offer: 'Структура под доверие: кейсы, услуги, экспертиза, лид-магниты.', timeline: '14–28 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%98%D0%BC%D0%B8%D0%B4%D0%B6%20%2B%20%D0%BB%D0%B8%D0%B4%D0%BE%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F' },
+        { filter: 'media', nicheTitle: 'Медиа / блог / журнал', title: 'Контент-платформа', offer: 'Таксономия материалов, шаблоны статей, выдача и перелинковка.', timeline: '18–30 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%9A%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82-%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0' },
+        { filter: 'fintech', nicheTitle: 'FinTech / трейдинг', title: 'Личный кабинет и дашборды', offer: 'Реалтайм-данные, роли доступа, отчеты и безопасный поток данных.', timeline: '30–60 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%9B%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%20%D0%B8%20%D0%B4%D0%B0%D1%88%D0%B1%D0%BE%D1%80%D0%B4%D1%8B' },
+        { filter: 'industrial', nicheTitle: 'Промышленные компании', title: 'Корпоративный highload-портал', offer: 'Многоуровневая структура, интеграции, каталоги и административные панели.', timeline: '30–55 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%9A%D0%BE%D1%80%D0%BF%D0%BE%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20highload-%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%BB' },
+        { filter: 'services', nicheTitle: 'Агентства и студии', title: 'Мульти-лендинг под услуги', offer: 'Отдельные страницы под сегменты + сквозная аналитика конверсий.', timeline: '14–24 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8-%D0%BB%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3%20%D0%BF%D0%BE%D0%B4%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8' },
+        { filter: 'ecom', nicheTitle: 'D2C бренды', title: 'Витрина + контент-маркетинг', offer: 'Комбо e-commerce и блоговой структуры для SEO и повторных продаж.', timeline: '24–40 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%92%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D0%B0%20%2B%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82-%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3' },
+        { filter: 'b2b', nicheTitle: 'IT / SaaS', title: 'Сайт продукта + onboarding', offer: 'Оффер, pricing, FAQ, demo-форма и воронка пробного доступа.', timeline: '16–30 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%A1%D0%B0%D0%B9%D1%82%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B0%20%2B%20onboarding' },
+        { filter: 'media', nicheTitle: 'Образовательные проекты', title: 'Журнал + воронка обучения', offer: 'Секции материалов, фильтры, подписка и лид-магнит через квиз.', timeline: '18–35 дней', cta: 'https://t.me/lilborsch?text=%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%3A%20%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB%20%2B%20%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%B0%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F' },
       ],
       siteTypesTitle: 'Типы сайтов и сервисов, которые я разрабатываю',
       siteTypesLead: 'Работаю с продуктами любой сложности: от одностраничников до высоконагруженных платформ с админкой и сложной бизнес-логикой.',
@@ -298,7 +299,7 @@ const content = computed(() => {
     proofCards: [
       { value: `${projects.length}+`, label: 'projects in portfolio' },
       { value: '11+', label: 'years of commercial development' },
-      { value: 'Highload', label: 'complex service expertise' },
+      { value: 'Highload', label: 'development of any complexity' },
       { value: `${articles.length}`, label: 'expert articles' },
     ],
     benefitsTitle: 'Why clients choose me for website development',
@@ -354,17 +355,18 @@ const content = computed(() => {
       { id: 'fintech', title: 'FinTech' },
       { id: 'industrial', title: 'Industrial' },
     ],
+    caseCta: 'Get pricing',
     cases: [
-      { filter: 'services', nicheTitle: 'Professional services', title: 'Lead generation landing', offer: 'Strong USP, short quiz, and 2-click lead form with CRM sync.', timeline: '10–14 days', budget: 'from $1,000' },
-      { filter: 'ecom', nicheTitle: 'Online store', title: 'Catalog + checkout', offer: 'Fast listing UX, conversion-first product cards, and SEO architecture.', timeline: '21–35 days', budget: 'from $2,200' },
-      { filter: 'b2b', nicheTitle: 'Corporate website', title: 'Trust + lead funnel', offer: 'Structured credibility blocks: services, proof, cases, lead magnets.', timeline: '14–28 days', budget: 'from $1,700' },
-      { filter: 'media', nicheTitle: 'Media / Blog / Journal', title: 'Content platform', offer: 'Taxonomy, article templates, category SEO, and internal linking.', timeline: '18–30 days', budget: 'from $2,000' },
-      { filter: 'fintech', nicheTitle: 'FinTech / trading', title: 'User account + dashboards', offer: 'Real-time metrics, role-based access, reporting, and reliable data flows.', timeline: '30–60 days', budget: 'from $3,200' },
-      { filter: 'industrial', nicheTitle: 'Industrial companies', title: 'Corporate high-load portal', offer: 'Multi-level architecture, integrations, catalogs, and admin workspaces.', timeline: '30–55 days', budget: 'from $3,000' },
-      { filter: 'services', nicheTitle: 'Agencies and studios', title: 'Multi-landing service funnel', offer: 'Segment pages with unified analytics and lead attribution.', timeline: '14–24 days', budget: 'from $1,500' },
-      { filter: 'ecom', nicheTitle: 'D2C brands', title: 'Storefront + content engine', offer: 'E-commerce plus SEO content structure for repeated acquisition.', timeline: '24–40 days', budget: 'from $2,600' },
-      { filter: 'b2b', nicheTitle: 'IT / SaaS products', title: 'Product site + onboarding', offer: 'Offer positioning, pricing, FAQ, demo funnel, and trial conversion path.', timeline: '16–30 days', budget: 'from $1,900' },
-      { filter: 'media', nicheTitle: 'Education projects', title: 'Journal + conversion funnel', offer: 'Structured knowledge base, subscriptions, and quiz-based lead magnets.', timeline: '18–35 days', budget: 'from $2,200' },
+      { filter: 'services', nicheTitle: 'Professional services', title: 'Lead generation landing', offer: 'Strong USP, short quiz, and 2-click lead form with CRM sync.', timeline: '10–14 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Lead%20generation%20landing' },
+      { filter: 'ecom', nicheTitle: 'Online store', title: 'Catalog + checkout', offer: 'Fast listing UX, conversion-first product cards, and SEO architecture.', timeline: '21–35 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Catalog%20%2B%20checkout' },
+      { filter: 'b2b', nicheTitle: 'Corporate website', title: 'Trust + lead funnel', offer: 'Structured credibility blocks: services, proof, cases, lead magnets.', timeline: '14–28 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Trust%20%2B%20lead%20funnel' },
+      { filter: 'media', nicheTitle: 'Media / Blog / Journal', title: 'Content platform', offer: 'Taxonomy, article templates, category SEO, and internal linking.', timeline: '18–30 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Content%20platform' },
+      { filter: 'fintech', nicheTitle: 'FinTech / trading', title: 'User account + dashboards', offer: 'Real-time metrics, role-based access, reporting, and reliable data flows.', timeline: '30–60 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20User%20account%20%2B%20dashboards' },
+      { filter: 'industrial', nicheTitle: 'Industrial companies', title: 'Corporate high-load portal', offer: 'Multi-level architecture, integrations, catalogs, and admin workspaces.', timeline: '30–55 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Corporate%20high-load%20portal' },
+      { filter: 'services', nicheTitle: 'Agencies and studios', title: 'Multi-landing service funnel', offer: 'Segment pages with unified analytics and lead attribution.', timeline: '14–24 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Multi-landing%20service%20funnel' },
+      { filter: 'ecom', nicheTitle: 'D2C brands', title: 'Storefront + content engine', offer: 'E-commerce plus SEO content structure for repeated acquisition.', timeline: '24–40 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Storefront%20%2B%20content%20engine' },
+      { filter: 'b2b', nicheTitle: 'IT / SaaS products', title: 'Product site + onboarding', offer: 'Offer positioning, pricing, FAQ, demo funnel, and trial conversion path.', timeline: '16–30 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Product%20site%20%2B%20onboarding' },
+      { filter: 'media', nicheTitle: 'Education projects', title: 'Journal + conversion funnel', offer: 'Structured knowledge base, subscriptions, and quiz-based lead magnets.', timeline: '18–35 days', cta: 'https://t.me/lilborsch?text=I%20want%20to%20get%20pricing%20for%3A%20Journal%20%2B%20conversion%20funnel' },
     ],
     siteTypesTitle: 'Website and product types I build',
     siteTypesLead: 'I deliver products of any complexity: from one-page sites to high-load platforms with admin areas and advanced business logic.',
@@ -860,6 +862,8 @@ useHead(() => {
   border 1px solid #344658
   border-radius 16px
   padding 14px
+  display flex
+  flex-direction column
   &__niche
     margin 0
     color #b7cde2
@@ -877,12 +881,28 @@ useHead(() => {
   &__meta
     margin-top 10px
     display flex
-    justify-content space-between
+    justify-content flex-start
     gap 8px
     span
       color #dff7d7
       font-size 13px
       font-weight 700
+
+  &__cta
+    margin-top 10px
+    min-height 42px
+    border-radius 10px
+    text-decoration none
+    display inline-flex
+    align-items center
+    justify-content center
+    background #dcffd0
+    color #111
+    font-weight 700
+    transition .18s ease all
+    &:hover
+      transform translateY(-1px)
+      box-shadow 0 8px 20px rgba(0, 0, 0, .22)
 
 .types-grid
   display flex

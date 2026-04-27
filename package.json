@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "build-only": "vite-ssg build && node scripts/generate-sitemap.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
+  "admin:password-hash": "node scripts/generate-admin-password-hash.mjs",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
