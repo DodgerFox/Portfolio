@@ -20,10 +20,13 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import { NotificationsStore } from '@/stores/notifications'
+
 const notificationsStore = NotificationsStore()
 const { notifications, errors } = storeToRefs(notificationsStore)
 
-function deleteNotification(notification) {
+function deleteNotification(notification: { message: string }) {
   notificationsStore.deleteNotification(notification)
 }
 </script>

@@ -1,7 +1,16 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
+interface NotificationItem {
+  message: string
+}
+
+interface NotificationsState {
+  notifications: NotificationItem[]
+  errors: NotificationItem[]
+}
+
 export const NotificationsStore = defineStore('notificationsStore', {
-  state: () => {
+  state: (): NotificationsState => {
     return {
       notifications: [],
       errors: [],
@@ -21,7 +30,7 @@ export const NotificationsStore = defineStore('notificationsStore', {
         this.errors = this.errors.filter((notif) => notif.message !== message)
       }, duration || 6000)
     },
-    deleteNotification(notification) {
+    deleteNotification(notification: NotificationItem) {
       this.notifications = this.notifications.filter(
         (notif) => notif.message !== notification.message,
       )

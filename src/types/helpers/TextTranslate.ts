@@ -1,17 +1,18 @@
-import { LOCALES } from '~/types/environment'
+import { LOCALES } from '@/types/environment'
 
-const locales = Object.values(LOCALES)
+const locales = Object.values(LOCALES) as LOCALES[]
 
-export class TextTranslate implements Record<LOCALES, string> {
-  [LOCALES.en]!: LOCALES.en;
-  [LOCALES.ru]!: LOCALES.ru
+export interface TextTranslate extends Record<LOCALES, string> {}
 
-  constructor(model?: Partial<TextTranslate>) {
-    model ||= {}
+type TextTranslateModel = Partial<Record<LOCALES, string>>
 
-    locales.forEach((locale) => {
-      this[locale] = model[locale] ?? ''
-    })
+export class TextTranslate {
+  [LOCALES.en]: string
+  [LOCALES.ru]: string
+
+  constructor(model: TextTranslateModel = {}) {
+    this[LOCALES.en] = model[LOCALES.en] ?? ''
+    this[LOCALES.ru] = model[LOCALES.ru] ?? ''
   }
 
   static Concat(...args: TextTranslate[]) {
@@ -27,13 +28,20 @@ export class TextTranslate implements Record<LOCALES, string> {
   }
 
   static FromString(text: string) {
-    return new TextTranslate(Object.fromEntries(locales.map((locale) => [locale, text])))
+    const model: Record<LOCALES, string> = {
+      [LOCALES.en]: text,
+      [LOCALES.ru]: text,
+    }
+
+    return new TextTranslate(model)
   }
 
   static is(value: unknown): value is TextTranslate {
     if (!value || typeof value !== 'object') return false
 
-    return locales.some((locale) => locale in value)
+    const data = value as Partial<Record<LOCALES, unknown>>
+
+    return locales.some((locale) => typeof data[locale] === 'string')
   }
 
   static getValue(data: TextTranslate | string, locale: LOCALES): string {
@@ -41,7 +49,7 @@ export class TextTranslate implements Record<LOCALES, string> {
 
     if (TextTranslate.is(data) && data[locale]) return data[locale]
 
-    return Object.values(data).filter((v) => v)[0]
+    return Object.values(data).find((v) => !!v) ?? ''
   }
 
   static getValues(data: unknown) {

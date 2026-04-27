@@ -7,13 +7,19 @@
             :width="24"
             :height="24"
         /> -->
-    <p v-if="tag.name">{{ tag.name[locale] }}</p>
+    <p v-if="tag.name">{{ tag.name[localeKey] }}</p>
   </div>
 </template>
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
+import type { Tag } from '@/types/Tag'
+import { LOCALES } from '@/types/environment'
+
 const { locale } = useI18n()
+const localeKey = computed(() => locale.value as LOCALES)
 defineProps<{
-  tag: any
+  tag: Tag
 }>()
 </script>
 <style lang="stylus">
