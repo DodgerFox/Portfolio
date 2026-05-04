@@ -180,12 +180,12 @@ const orderInfo = computed(() => {
     cta: 'Message on Telegram',
   }
 })
-const avatarSrc = ref('/images/avatar.webp')
+const avatarSrc = ref('/images/avatar-pink.jpeg')
 
 function onAvatarError(event: Event) {
   const target = event.target as HTMLImageElement
-  // fallback to a different existing format if the first one fails
-  target.src = '/images/avatar.png'
+  // fallback to existing webp if jpeg isn't available
+  target.src = '/images/avatar.webp'
 }
 
 useHead({
